@@ -8,16 +8,16 @@ RUN apt update && \
 
 RUN pip install -U pip setuptools wheel
 
-COPY requirements-test.txt requirements.txt /opt/openwisp/
-RUN pip install -r /opt/openwisp/requirements.txt && \
-    pip install -r /opt/openwisp/requirements-test.txt && \
+COPY requirements-test.txt requirements.txt /opt/immunity/
+RUN pip install -r /opt/immunity/requirements.txt && \
+    pip install -r /opt/immunity/requirements-test.txt && \
     rm -rf /var/lib/apt/lists/* /root/.cache/pip/* /tmp/*
 
-ADD . /opt/openwisp
-RUN pip install -U /opt/openwisp && \
+ADD . /opt/immunity
+RUN pip install -U /opt/immunity && \
     rm -rf /var/lib/apt/lists/* /root/.cache/pip/* /tmp/*
-WORKDIR /opt/openwisp/tests/
-ENV NAME=openwisp-monitoring \
+WORKDIR /opt/immunity/tests/
+ENV NAME=immunity-monitoring \
     PYTHONBUFFERED=1 \
     INFLUXDB_HOST=influxdb \
     REDIS_HOST=redis

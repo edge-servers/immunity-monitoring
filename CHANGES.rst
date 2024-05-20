@@ -25,8 +25,8 @@ Bugfixes
 ~~~~~~~~
 
 - Fixed migrations which create checks for existing devices;
-  this problem was happening to OpenWISP instances which were
-  deployed without OpenWISP Monitoring and then enabled
+  this problem was happening to Immunity instances which were
+  deployed without Immunity Monitoring and then enabled
   the monitoring features
 
 Version 1.0.1 [2022-07-01]
@@ -40,7 +40,7 @@ Bugfixes
   external service (e.g. S3 storage buckets)
 - Fixed `"migrate_timeseries" command stalling
   when measurements exceeds retention policy
-  <https://github.com/openwisp/openwisp-monitoring/issues/401>`_
+  <https://github.com/edge-servers/immunity-monitoring/issues/401>`_
 
 Version 1.0.0 [2022-05-05]
 --------------------------
@@ -49,11 +49,11 @@ Features
 ~~~~~~~~
 
 - Added metrics for mobile (5G/LTE/UMTS/GSM)
-  `signal strength <https://github.com/openwisp/openwisp-monitoring#mobile-signal-strength>`_,
-  `signal quality <https://github.com/openwisp/openwisp-monitoring#mobile-signal-quality>`_
+  `signal strength <https://github.com/edge-servers/immunity-monitoring#mobile-signal-strength>`_,
+  `signal quality <https://github.com/edge-servers/immunity-monitoring#mobile-signal-quality>`_
   and `mobile access technology in use
-  <https://github.com/openwisp/openwisp-monitoring#mobile-access-technology-in-use>`_.
-- Made `Ping check configurable <https://github.com/openwisp/openwisp-monitoring#openwisp_monitoring_ping_check_config>`_
+  <https://github.com/edge-servers/immunity-monitoring#mobile-access-technology-in-use>`_.
+- Made `Ping check configurable <https://github.com/edge-servers/immunity-monitoring#immunity_monitoring_ping_check_config>`_
 - Added monitoring status chart to the dashboard and
   a geographic map which shows a visual representation of the
   monitoring the status of the devices.
@@ -69,26 +69,26 @@ Backward incompatible changes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - *Monitoring Template* is removed in favour of
-  `openwisp monitoring packages <https://github.com/openwisp/openwrt-openwisp-monitoring#openwrt-openwisp-monitoring>`_.
+  `immunity monitoring packages <https://github.com/edge-servers/openwrt-immunity-monitoring#openwrt-immunity-monitoring>`_.
   Follow the migration guide in `migrating from monitoring scripts to
-  monitoring packages <https://github.com/openwisp/openwisp-monitoring#migrating-from-monitoring-scripts-to-monitoring-packages>`_
-  section of openwisp-monitoring documentation.
+  monitoring packages <https://github.com/edge-servers/immunity-monitoring#migrating-from-monitoring-scripts-to-monitoring-packages>`_
+  section of immunity-monitoring documentation.
 - If you have made changes to the default *Monitoring Template*, then
   create a backup of your template before running migrations. Running
   migrations will make changes to the default *Monitoring Template*.
 - The time-series database schema for storing
-  `interface traffic <https://github.com/openwisp/openwisp-monitoring#traffic>`_
-  and `associated WiFi clients <https://github.com/openwisp/openwisp-monitoring#wifi-clients>`_
+  `interface traffic <https://github.com/edge-servers/immunity-monitoring#traffic>`_
+  and `associated WiFi clients <https://github.com/edge-servers/immunity-monitoring#wifi-clients>`_
   has been updated. The data for *interface traffic* and *associated WiFi clients*
   is stored in ``traffic`` and ``wifi_clients`` measurements respectively.
   The Django migrations will perform the necessary operations in the time-series
   database aysnchronously. It is recommended that you backup the time-series
   database before running the migrations.
 
-  You can use the `migrate_timeseries <https://github.com/openwisp/openwisp-monitoring#run-checks>`_
+  You can use the `migrate_timeseries <https://github.com/edge-servers/immunity-monitoring#run-checks>`_
   management command to trigger the migration of the time-series database.
-- The `interface traffic <https://github.com/openwisp/openwisp-monitoring#traffic>`_
-  and `associated WiFi clients <https://github.com/openwisp/openwisp-monitoring#wifi-clients>`_
+- The `interface traffic <https://github.com/edge-servers/immunity-monitoring#traffic>`_
+  and `associated WiFi clients <https://github.com/edge-servers/immunity-monitoring#wifi-clients>`_
   metrics store additional tags, i.e. ``organization_id``, ``location_id`` and ``floorplan_id``.
 
 Dependencies
@@ -98,7 +98,7 @@ Dependencies
 - Dropped support for Django 2.2
 - Added support for Python 3.8 and 3.9
 - Added support for Django 3.2 and 4.0
-- Upgraded openwisp-controller to 1.0.x
+- Upgraded immunity-controller to 1.0.x
 - Upgraded inflxudb to 5.3.x
 - Upgraded django-cache-memoize to 0.1.0
 - Upgraded django-nested-admin to 3.4.0
@@ -116,7 +116,7 @@ Other changes
 - Renamed ``Check.check`` field to ``Check.check_type``
 - Made metric health status independent of AlertSetting tolerance.
   Added ``tolerance_crossed`` parameter in
-  ``openwisp_monitoring.monitoring.signals.threshold_crossed`` signal
+  ``immunity_monitoring.monitoring.signals.threshold_crossed`` signal
 - The system does not sends connection notifications if the
   connectivity of the device changes
 - Improved UX of device's reachability (ping) chart.
@@ -129,8 +129,8 @@ Bugfixes
 
 - Fixed a bug that caused inconsistency in the order of chart summary values
 - Fixed bugs in restoring deleted devices using ``django-reversion``
-- Fixed migrations referencing non-swappable OpenWISP modules
-  that broke OpenWISP's extensibility
+- Fixed migrations referencing non-swappable Immunity modules
+  that broke Immunity's extensibility
 - Skip retry for writing metrics beyond retention policy.
   The celery worker kept on retrying writing data to InfluxDB even
   when the data points crossed the retention policy of InfluxDB. This

@@ -4,12 +4,12 @@ from django.test import TransactionTestCase
 from django.utils.timezone import now
 from swapper import load_model
 
-from openwisp_monitoring.check.classes import Ping
-from openwisp_monitoring.check.tests import _FPING_REACHABLE
-from openwisp_monitoring.check.tests.test_models import TestModels as BaseTestModels
-from openwisp_monitoring.check.tests.test_ping import TestPing as BaseTestPing
-from openwisp_monitoring.check.tests.test_utils import TestUtils as BaseTestUtils
-from openwisp_monitoring.device.tests import TestDeviceMonitoringMixin
+from immunity_monitoring.check.classes import Ping
+from immunity_monitoring.check.tests import _FPING_REACHABLE
+from immunity_monitoring.check.tests.test_models import TestModels as BaseTestModels
+from immunity_monitoring.check.tests.test_ping import TestPing as BaseTestPing
+from immunity_monitoring.check.tests.test_utils import TestUtils as BaseTestUtils
+from immunity_monitoring.device.tests import TestDeviceMonitoringMixin
 
 Check = load_model('check', 'Check')
 

@@ -9,7 +9,7 @@ import model_utils.fields
 import swapper
 from django.db import migrations, models
 
-import openwisp_monitoring.device.base.models
+import immunity_monitoring.device.base.models
 
 
 class Migration(migrations.Migration):
@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
             fields=[],
             options={'proxy': True, 'indexes': [], 'constraints': []},
             bases=(
-                openwisp_monitoring.device.base.models.AbstractDeviceData,
+                immunity_monitoring.device.base.models.AbstractDeviceData,
                 swapper.get_model_name('config', 'Device'),
             ),
         ),

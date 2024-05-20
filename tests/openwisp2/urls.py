@@ -9,9 +9,9 @@ redirect_view = RedirectView.as_view(url=reverse_lazy('admin:index'))
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('openwisp_controller.urls')),
-    path('', include('openwisp_monitoring.urls')),
-    path('api/v1/', include('openwisp_utils.api.urls')),
+    path('', include('immunity_controller.urls')),
+    path('', include('immunity_monitoring.urls')),
+    path('api/v1/', include('immunity_utils.api.urls')),
     path('', redirect_view, name='index'),
 ]
 

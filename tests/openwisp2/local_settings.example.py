@@ -3,8 +3,8 @@
 
 # DATABASES = {
 #    'default': {
-#        'ENGINE': 'openwisp_utils.db.backends.spatialite',
-#        'NAME': 'openwisp-monitoring.db',
+#        'ENGINE': 'immunity_utils.db.backends.spatialite',
+#        'NAME': 'immunity-monitoring.db',
 #        'USER': '',
 #        'PASSWORD': '',
 #        'HOST': '',

@@ -11,7 +11,7 @@ import model_utils.fields
 import swapper
 from django.db import migrations, models
 
-from openwisp_monitoring.monitoring.configuration import (
+from immunity_monitoring.monitoring.configuration import (
     get_chart_configuration_choices,
     get_metric_configuration_choices,
 )

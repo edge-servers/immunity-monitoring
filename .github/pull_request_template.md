@@ -1,7 +1,7 @@
 <!--
 Before submitting a Pull Request, please make sure you have read
-the OpenWISP Contributing Guidelines:
-http://openwisp.io/docs/developer/contributing.html#how-to-commit-your-changes-properly
+the Immunity Contributing Guidelines:
+http://immunity.io/docs/developer/contributing.html#how-to-commit-your-changes-properly
 -->
 
 Checks:

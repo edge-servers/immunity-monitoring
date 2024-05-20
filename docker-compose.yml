@@ -2,7 +2,7 @@ version: "3"
 
 services:
   monitoring:
-    image: openwisp/openwisp-monitoring:develop
+    image: immunity/immunity-monitoring:develop
     build:
       context: .
       dockerfile: Dockerfile
@@ -24,9 +24,9 @@ services:
       - "8091:8091/udp"
       - "8092:8092/udp"
     environment:
-      INFLUXDB_DB: openwisp2
-      INFLUXDB_USER: openwisp
-      INFLUXDB_USER_PASSWORD: openwisp
+      INFLUXDB_DB: immunity2
+      INFLUXDB_USER: immunity
+      INFLUXDB_USER_PASSWORD: immunity
 
   redis:
     image: redis:5.0-alpine

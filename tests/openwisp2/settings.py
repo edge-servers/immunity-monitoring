@@ -11,21 +11,21 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-# required by openwisp-notifications
+# required by immunity-notifications
 INTERNAL_IPS = ['127.0.0.1']
 
 DATABASES = {
     'default': {
-        'ENGINE': 'openwisp_utils.db.backends.spatialite',
-        'NAME': 'openwisp-monitoring.db',
+        'ENGINE': 'immunity_utils.db.backends.spatialite',
+        'NAME': 'immunity-monitoring.db',
     }
 }
 
 TIMESERIES_DATABASE = {
-    'BACKEND': 'openwisp_monitoring.db.backends.influxdb',
-    'USER': 'openwisp',
-    'PASSWORD': 'openwisp',
-    'NAME': 'openwisp2',
+    'BACKEND': 'immunity_monitoring.db.backends.influxdb',
+    'USER': 'immunity',
+    'PASSWORD': 'immunity',
+    'NAME': 'immunity2',
     'HOST': os.getenv('INFLUXDB_HOST', 'localhost'),
     'PORT': '8086',
     # UDP writes are disabled by default
@@ -51,24 +51,24 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django_extensions',
     'django_filters',
-    # openwisp2 modules
-    'openwisp_controller.config',
-    'openwisp_controller.connection',
-    'openwisp_controller.pki',
-    'openwisp_controller.geo',
-    'openwisp_users',
-    'openwisp_ipam',
+    # immunity2 modules
+    'immunity_controller.config',
+    'immunity_controller.connection',
+    'immunity_controller.pki',
+    'immunity_controller.geo',
+    'immunity_users',
+    'immunity_ipam',
     # monitoring
-    'openwisp_monitoring.monitoring',
-    'openwisp_monitoring.device',
-    'openwisp_monitoring.check',
+    'immunity_monitoring.monitoring',
+    'immunity_monitoring.device',
+    'immunity_monitoring.check',
     'nested_admin',
     # notifications
-    'openwisp_notifications',
+    'immunity_notifications',
     # admin
-    # openwisp2 admin theme
+    # immunity2 admin theme
     # (must be loaded here)
-    'openwisp_utils.admin_theme',
+    'immunity_utils.admin_theme',
     'admin_auto_filters',
     'django.contrib.admin',
     'django.forms',
@@ -89,13 +89,13 @@ INSTALLED_APPS = [
 
 EXTENDED_APPS = ['django_x509', 'django_loci']
 
-AUTH_USER_MODEL = 'openwisp_users.User'
+AUTH_USER_MODEL = 'immunity_users.User'
 SITE_ID = 1
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'openwisp_utils.staticfiles.DependencyFinder',
+    'immunity_utils.staticfiles.DependencyFinder',
 ]
 
 MIDDLEWARE = [
@@ -108,7 +108,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'openwisp2.urls'
+ROOT_URLCONF = 'immunity2.urls'
 
 TIME_ZONE = 'Europe/Rome'
 LANGUAGE_CODE = 'en-gb'
@@ -127,16 +127,16 @@ TEMPLATES = [
             'loaders': [
                 'django.template.loaders.filesystem.Loader',
                 'django.template.loaders.app_directories.Loader',
-                'openwisp_utils.loaders.DependencyLoader',
+                'immunity_utils.loaders.DependencyLoader',
             ],
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'openwisp_utils.admin_theme.context_processor.menu_groups',
-                'openwisp_utils.admin_theme.context_processor.admin_theme_settings',
-                'openwisp_notifications.context_processors.notification_api_settings',
+                'immunity_utils.admin_theme.context_processor.menu_groups',
+                'immunity_utils.admin_theme.context_processor.admin_theme_settings',
+                'immunity_notifications.context_processors.notification_api_settings',
             ],
         },
     }
@@ -178,23 +178,23 @@ CELERY_TIMEZONE = TIME_ZONE
 
 CELERY_BEAT_SCHEDULE = {
     'run_checks': {
-        'task': 'openwisp_monitoring.check.tasks.run_checks',
+        'task': 'immunity_monitoring.check.tasks.run_checks',
         # Executes only ping & config check every 5 min
         'schedule': timedelta(minutes=5),
         'args': (
             [  # Checks path
-                'openwisp_monitoring.check.classes.Ping',
-                'openwisp_monitoring.check.classes.ConfigApplied',
+                'immunity_monitoring.check.classes.Ping',
+                'immunity_monitoring.check.classes.ConfigApplied',
             ],
         ),
         'relative': True,
     },
     'run_iperf3_checks': {
-        'task': 'openwisp_monitoring.check.tasks.run_checks',
+        'task': 'immunity_monitoring.check.tasks.run_checks',
         # https://docs.celeryq.dev/en/latest/userguide/periodic-tasks.html#crontab-schedules
         # Executes only iperf3 check every 5 mins from 00:00 AM to 6:00 AM (night)
         'schedule': crontab(minute='*/5', hour='0-6'),
-        'args': (['openwisp_monitoring.check.classes.Iperf3'],),
+        'args': (['immunity_monitoring.check.classes.Iperf3'],),
         'relative': True,
     },
 }
@@ -202,7 +202,7 @@ CELERY_BEAT_SCHEDULE = {
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 CELERY_EMAIL_BACKEND = EMAIL_BACKEND
 
-ASGI_APPLICATION = 'openwisp2.routing.application'
+ASGI_APPLICATION = 'immunity2.routing.application'
 
 if TESTING:
     CHANNEL_LAYERS = {'default': {'BACKEND': 'channels.layers.InMemoryChannelLayer'}}
@@ -217,13 +217,13 @@ else:
 # avoid slowing down the test suite with mac vendor lookups
 if TESTING:
     OPENWISP_MONITORING_MAC_VENDOR_DETECTION = False
-    OPENWISP_MONITORING_API_URLCONF = 'openwisp_monitoring.urls'
+    OPENWISP_MONITORING_API_URLCONF = 'immunity_monitoring.urls'
     OPENWISP_MONITORING_API_BASEURL = 'http://testserver'
     # for testing AUTO_IPERF3
     OPENWISP_MONITORING_AUTO_IPERF3 = True
 
 # Temporarily added to identify slow tests
-TEST_RUNNER = 'openwisp_utils.tests.TimeLoggingTestRunner'
+TEST_RUNNER = 'immunity_utils.tests.TimeLoggingTestRunner'
 
 LEAFLET_CONFIG = {
     'TILES': [
@@ -286,15 +286,15 @@ if not TESTING and SHELL:
 
 if os.environ.get('SAMPLE_APP', False):
     for app in [
-        'openwisp_monitoring.monitoring',
-        'openwisp_monitoring.check',
-        'openwisp_monitoring.device',
+        'immunity_monitoring.monitoring',
+        'immunity_monitoring.check',
+        'immunity_monitoring.device',
     ]:
         INSTALLED_APPS.remove(app)
         EXTENDED_APPS.append(app)
-    INSTALLED_APPS.append('openwisp2.sample_monitoring')
-    INSTALLED_APPS.append('openwisp2.sample_check')
-    INSTALLED_APPS.append('openwisp2.sample_device_monitoring')
+    INSTALLED_APPS.append('immunity2.sample_monitoring')
+    INSTALLED_APPS.append('immunity2.sample_check')
+    INSTALLED_APPS.append('immunity2.sample_device_monitoring')
     CHECK_CHECK_MODEL = 'sample_check.Check'
     MONITORING_CHART_MODEL = 'sample_monitoring.Chart'
     MONITORING_METRIC_MODEL = 'sample_monitoring.Metric'
@@ -306,10 +306,10 @@ if os.environ.get('SAMPLE_APP', False):
         'sample_device_monitoring.DeviceMonitoring'
     )
     # Celery auto detects tasks only from INSTALLED_APPS
-    CELERY_IMPORTS = ('openwisp_monitoring.device.tasks',)
+    CELERY_IMPORTS = ('immunity_monitoring.device.tasks',)
 
 # local settings must be imported before test runner otherwise they'll be ignored
 try:
-    from openwisp2.local_settings import *
+    from immunity2.local_settings import *
 except ImportError:
     pass

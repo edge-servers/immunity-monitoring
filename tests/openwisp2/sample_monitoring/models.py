@@ -1,6 +1,6 @@
 from django.db import models
 
-from openwisp_monitoring.monitoring.base.models import (
+from immunity_monitoring.monitoring.base.models import (
     AbstractAlertSettings,
     AbstractChart,
     AbstractMetric,

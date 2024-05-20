@@ -1,6 +1,6 @@
 from django.db import migrations
 
-from openwisp_monitoring.monitoring.migrations import (
+from immunity_monitoring.monitoring.migrations import (
     create_general_metrics,
     delete_general_metrics,
 )

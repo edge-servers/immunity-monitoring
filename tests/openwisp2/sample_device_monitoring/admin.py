@@ -1,1 +1,1 @@
-from openwisp_monitoring.device.admin import DeviceAdmin  # noqa
+from immunity_monitoring.device.admin import DeviceAdmin  # noqa

@@ -2,7 +2,7 @@
 
 from django.db import migrations
 
-from openwisp_monitoring.device.migrations import assign_permissions_to_groups
+from immunity_monitoring.device.migrations import assign_permissions_to_groups
 
 
 class Migration(migrations.Migration):

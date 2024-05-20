@@ -1,28 +1,28 @@
-from openwisp_monitoring.device.tests import (
+from immunity_monitoring.device.tests import (
     DeviceMonitoringTestCase as DeviceMonitoringTestCase,
 )
-from openwisp_monitoring.device.tests.test_admin import TestAdmin as BaseTestAdmin
-from openwisp_monitoring.device.tests.test_admin import (
+from immunity_monitoring.device.tests.test_admin import TestAdmin as BaseTestAdmin
+from immunity_monitoring.device.tests.test_admin import (
     TestWifiSessionAdmin as BaseTestWifiSessionAdmin,
 )
-from openwisp_monitoring.device.tests.test_api import TestDeviceApi as BaseTestDeviceApi
-from openwisp_monitoring.device.tests.test_apps import TestApps as BaseTestApps
-from openwisp_monitoring.device.tests.test_models import (
+from immunity_monitoring.device.tests.test_api import TestDeviceApi as BaseTestDeviceApi
+from immunity_monitoring.device.tests.test_apps import TestApps as BaseTestApps
+from immunity_monitoring.device.tests.test_models import (
     TestDeviceData as BaseTestDeviceData,
 )
-from openwisp_monitoring.device.tests.test_models import (
+from immunity_monitoring.device.tests.test_models import (
     TestDeviceMonitoring as BaseTestDeviceMonitoring,
 )
-from openwisp_monitoring.device.tests.test_models import (
+from immunity_monitoring.device.tests.test_models import (
     TestWifiClientSession as BaseTestWifiClientSession,
 )
-from openwisp_monitoring.device.tests.test_recovery import (
+from immunity_monitoring.device.tests.test_recovery import (
     TestRecovery as BaseTestRecovery,
 )
-from openwisp_monitoring.device.tests.test_settings import (
+from immunity_monitoring.device.tests.test_settings import (
     TestSettings as BaseTestSettings,
 )
-from openwisp_monitoring.device.tests.test_transactions import (
+from immunity_monitoring.device.tests.test_transactions import (
     TestTransactions as BaseTestTransactions,
 )
 

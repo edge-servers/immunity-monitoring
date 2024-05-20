@@ -1,77 +1,77 @@
-openwisp-monitoring
+immunity-monitoring
 ===================
 
-.. image:: https://github.com/openwisp/openwisp-monitoring/workflows/OpenWISP%20Monitoring%20CI%20Build/badge.svg?branch=master
-    :target: https://github.com/openwisp/openwisp-monitoring/actions?query=workflow%3A%22OpenWISP+Monitoring+CI+Build%22
+.. image:: https://github.com/edge-servers/immunity-monitoring/workflows/Immunity%20Monitoring%20CI%20Build/badge.svg?branch=master
+    :target: https://github.com/edge-servers/immunity-monitoring/actions?query=workflow%3A%22Immunity+Monitoring+CI+Build%22
     :alt: CI build status
 
-.. image:: https://coveralls.io/repos/github/openwisp/openwisp-monitoring/badge.svg?branch=master
-    :target: https://coveralls.io/github/openwisp/openwisp-monitoring?branch=master
+.. image:: https://coveralls.io/repos/github/immunity/immunity-monitoring/badge.svg?branch=master
+    :target: https://coveralls.io/github/immunity/immunity-monitoring?branch=master
     :alt: Test coverage
 
-.. image:: https://img.shields.io/librariesio/github/openwisp/openwisp-monitoring
-   :target: https://libraries.io/github/openwisp/openwisp-monitoring#repository_dependencies
+.. image:: https://img.shields.io/librariesio/github/immunity/immunity-monitoring
+   :target: https://libraries.io/github/immunity/immunity-monitoring#repository_dependencies
    :alt: Dependency monitoring
 
-.. image:: https://badge.fury.io/py/openwisp-monitoring.svg
-    :target: http://badge.fury.io/py/openwisp-monitoring
+.. image:: https://badge.fury.io/py/immunity-monitoring.svg
+    :target: http://badge.fury.io/py/immunity-monitoring
     :alt: pypi
 
-.. image:: https://pepy.tech/badge/openwisp-monitoring
-   :target: https://pepy.tech/project/openwisp-monitoring
+.. image:: https://pepy.tech/badge/immunity-monitoring
+   :target: https://pepy.tech/project/immunity-monitoring
    :alt: downloads
 
 .. image:: https://img.shields.io/gitter/room/nwjs/nw.js.svg?style=flat-square
-   :target: https://gitter.im/openwisp/monitoring
+   :target: https://gitter.im/immunity/monitoring
    :alt: support chat
 
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
    :target: https://pypi.org/project/black/
    :alt: code style: black
 
-.. image:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/monitoring-demo.gif
-   :target: https://github.com/openwisp/openwisp-monitoring/tree/docs/docs/monitoring-demo.gif
+.. image:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/monitoring-demo.gif
+   :target: https://github.com/edge-servers/immunity-monitoring/tree/docs/docs/monitoring-demo.gif
    :alt: Feature Highlights
 
 ------------
 
-**Need a quick overview?** `Try the OpenWISP Demo <https://openwisp.org/demo.html>`_.
+**Need a quick overview?** `Try the Immunity Demo <https://immunity.org/demo.html>`_.
 
-OpenWISP Monitoring is a network monitoring system written in Python and Django,
+Immunity Monitoring is a network monitoring system written in Python and Django,
 designed to be **extensible**, **programmable**, **scalable** and easy to use by end users:
 once the system is configured, monitoring checks, alerts and metric collection
 happens automatically.
 
 See the `available features <#available-features>`_.
 
-`OpenWISP <http://openwisp.org>`_ is not only an application designed for end users,
+`Immunity <http://immunity.org>`_ is not only an application designed for end users,
 but can also be used as a framework on which custom network automation solutions can be
 built on top of its building blocks.
 
-Other popular building blocks that are part of the OpenWISP ecosystem are:
+Other popular building blocks that are part of the Immunity ecosystem are:
 
-- `openwisp-controller <https://github.com/openwisp/openwisp-controller>`_:
+- `immunity-controller <https://github.com/edge-servers/immunity-controller>`_:
   network and WiFi controller: provisioning, configuration management,
   x509 PKI management and more; works on OpenWRT, but designed to work also on other systems.
-- `openwisp-network-topology <https://github.com/openwisp/openwisp-network-topology>`_:
+- `immunity-network-topology <https://github.com/edge-servers/immunity-network-topology>`_:
   provides way to collect and visualize network topology data from
   dynamic mesh routing daemons or other network software (eg: OpenVPN);
-  it can be used in conjunction with openwisp-monitoring to get a better idea
+  it can be used in conjunction with immunity-monitoring to get a better idea
   of the state of the network
-- `openwisp-firmware-upgrader <https://github.com/openwisp/openwisp-firmware-upgrader>`_:
+- `immunity-firmware-upgrader <https://github.com/edge-servers/immunity-firmware-upgrader>`_:
   automated firmware upgrades (single device or mass network upgrades)
-- `openwisp-radius <https://github.com/openwisp/openwisp-radius>`_:
+- `immunity-radius <https://github.com/edge-servers/immunity-radius>`_:
   based on FreeRADIUS, allows to implement network access authentication systems like
   802.1x WPA2 Enterprise, captive portal authentication, Hotspot 2.0 (802.11u)
-- `openwisp-ipam <https://github.com/openwisp/openwisp-ipam>`_:
+- `immunity-ipam <https://github.com/edge-servers/immunity-ipam>`_:
   it allows to manage the IP address space of networks
 
-**For a more complete overview of the OpenWISP modules and architecture**,
+**For a more complete overview of the Immunity modules and architecture**,
 see the
-`OpenWISP Architecture Overview
-<https://openwisp.io/docs/general/architecture.html>`_.
+`Immunity Architecture Overview
+<https://immunity.io/docs/general/architecture.html>`_.
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/dashboard.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/dashboard.png
   :align: center
 
 Available Features
@@ -102,8 +102,8 @@ Available Features
   a chart shows the percentages of devices which are online, offline or having issues;
   there are also `two timeseries charts which show the total unique WiFI clients and
   the traffic flowing to the network <dashboard-monitoring-charts>`_,
-  a geographic map is also available for those who use the geographic features of OpenWISP
-* Possibility to configure additional `Metrics <#openwisp_monitoring_metrics>`_ and `Charts <#openwisp_monitoring_charts>`_
+  a geographic map is also available for those who use the geographic features of Immunity
+* Possibility to configure additional `Metrics <#immunity_monitoring_metrics>`_ and `Charts <#immunity_monitoring_charts>`_
 * Extensible active check system: it's possible to write additional checks that
   are run periodically using python classes
 * Extensible metrics and charts: it's possible to define new metrics and new charts
@@ -128,16 +128,16 @@ Deploy it in production
 
 See:
 
-- `ansible-openwisp2 <https://github.com/openwisp/ansible-openwisp2>`_
-- `docker-openwisp <https://github.com/openwisp/docker-openwisp>`_
+- `ansible-immunity2 <https://github.com/edge-servers/ansible-immunity2>`_
+- `docker-immunity <https://github.com/edge-servers/docker-immunity>`_
 
 Install system dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*openwisp-monitoring* uses InfluxDB to store metrics. Follow the
+*immunity-monitoring* uses InfluxDB to store metrics. Follow the
 `installation instructions from InfluxDB's official documentation <https://docs.influxdata.com/influxdb/v1.8/introduction/install/>`_.
 
-**Note:** Only *InfluxDB 1.8.x* is supported in *openwisp-monitoring*.
+**Note:** Only *InfluxDB 1.8.x* is supported in *immunity-monitoring*.
 
 Install system packages:
 
@@ -154,7 +154,7 @@ Install from PyPI:
 
 .. code-block:: shell
 
-    pip install openwisp-monitoring
+    pip install immunity-monitoring
 
 Install development version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -163,13 +163,13 @@ Install tarball:
 
 .. code-block:: shell
 
-    pip install https://github.com/openwisp/openwisp-monitoring/tarball/master
+    pip install https://github.com/edge-servers/immunity-monitoring/tarball/master
 
 Alternatively, you can install via pip using git:
 
 .. code-block:: shell
 
-    pip install -e git+git://github.com/openwisp/openwisp-monitoring#egg=openwisp_monitoring
+    pip install -e git+git://github.com/immunity/immunity-monitoring#egg=immunity_monitoring
 
 If you want to contribute, follow the instructions in
 `"Installing for development" <#installing-for-development>`_ section.
@@ -191,13 +191,13 @@ Fork and clone the forked repository:
 
 .. code-block:: shell
 
-    git clone git://github.com/<your_fork>/openwisp-monitoring
+    git clone git://github.com/<your_fork>/immunity-monitoring
 
 Navigate into the cloned repository:
 
 .. code-block:: shell
 
-    cd openwisp-monitoring/
+    cd immunity-monitoring/
 
 Start Redis and InfluxDB using Docker:
 
@@ -242,8 +242,8 @@ Run celery and celery-beat with the following commands (separate terminal window
 .. code-block:: shell
 
     cd tests/
-    celery -A openwisp2 worker -l info
-    celery -A openwisp2 beat -l info
+    celery -A immunity2 worker -l info
+    celery -A immunity2 beat -l info
 
 Launch development server:
 
@@ -269,8 +269,8 @@ Install and run on docker
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Note**: This Docker image is for development purposes only.
-For the official OpenWISP Docker images, see: `docker-openwisp
-<https://github.com/openwisp/docker-openwisp>`_.
+For the official Immunity Docker images, see: `docker-immunity
+<https://github.com/edge-servers/docker-immunity>`_.
 
 Build from the Dockerfile:
 
@@ -287,8 +287,8 @@ Run the docker container:
 Setup (integrate in an existing Django project)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Follow the setup instructions of `openwisp-controller
-<https://github.com/openwisp/openwisp-controller>`_, then add the settings described below.
+Follow the setup instructions of `immunity-controller
+<https://github.com/edge-servers/immunity-controller>`_, then add the settings described below.
 
 .. code-block:: python
 
@@ -301,21 +301,21 @@ Follow the setup instructions of `openwisp-controller
         'allauth.socialaccount',
         'django_extensions',
         'django_filters',
-        # openwisp2 modules
-        'openwisp_users',
-        'openwisp_controller.pki',
-        'openwisp_controller.config',
-        'openwisp_controller.connection',
-        'openwisp_controller.geo',
+        # immunity2 modules
+        'immunity_users',
+        'immunity_controller.pki',
+        'immunity_controller.config',
+        'immunity_controller.connection',
+        'immunity_controller.geo',
         # monitoring
-        'openwisp_monitoring.monitoring',
-        'openwisp_monitoring.device',
-        'openwisp_monitoring.check',
+        'immunity_monitoring.monitoring',
+        'immunity_monitoring.device',
+        'immunity_monitoring.check',
         'nested_admin',
         # notifications
-        'openwisp_notifications',
-        # openwisp2 admin theme (must be loaded here)
-        'openwisp_utils.admin_theme',
+        'immunity_notifications',
+        # immunity2 admin theme (must be loaded here)
+        'immunity_utils.admin_theme',
         'admin_auto_filters',
         # admin
         'django.contrib.admin',
@@ -325,12 +325,12 @@ Follow the setup instructions of `openwisp-controller
     ]
 
     # Make sure you change them in production
-    # You can select one of the backends located in openwisp_monitoring.db.backends
+    # You can select one of the backends located in immunity_monitoring.db.backends
     TIMESERIES_DATABASE = {
-        'BACKEND': 'openwisp_monitoring.db.backends.influxdb',
-        'USER': 'openwisp',
-        'PASSWORD': 'openwisp',
-        'NAME': 'openwisp2',
+        'BACKEND': 'immunity_monitoring.db.backends.influxdb',
+        'USER': 'immunity',
+        'PASSWORD': 'immunity',
+        'NAME': 'immunity2',
         'HOST': 'localhost',
         'PORT': '8086',
         'OPTIONS': {
@@ -350,14 +350,14 @@ Follow the setup instructions of `openwisp-controller
     from django.conf.urls import include, url
     from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-    from openwisp_utils.admin_theme.admin import admin, openwisp_admin
+    from immunity_utils.admin_theme.admin import admin, immunity_admin
 
-    openwisp_admin()
+    immunity_admin()
 
     urlpatterns = [
         url(r'^admin/', include(admin.site.urls)),
-        url(r'', include('openwisp_controller.urls')),
-        url(r'', include('openwisp_monitoring.urls')),
+        url(r'', include('immunity_controller.urls')),
+        url(r'', include('immunity_monitoring.urls')),
     ]
 
     urlpatterns += staticfiles_urlpatterns()
@@ -388,20 +388,20 @@ Configure celery (you may use a different broker if you want):
     CELERY_BROKER_URL = 'redis://localhost/1'
     CELERY_BEAT_SCHEDULE = {
         'run_checks': {
-            'task': 'openwisp_monitoring.check.tasks.run_checks',
+            'task': 'immunity_monitoring.check.tasks.run_checks',
             # Executes only ping & config check every 5 min
             'schedule': timedelta(minutes=5),
             'args': (
                 [  # Checks path
-                    'openwisp_monitoring.check.classes.Ping',
-                    'openwisp_monitoring.check.classes.ConfigApplied',
+                    'immunity_monitoring.check.classes.Ping',
+                    'immunity_monitoring.check.classes.ConfigApplied',
                 ],
             ),
             'relative': True,
         },
         # Delete old WifiSession
         'delete_wifi_clients_and_sessions': {
-            'task': 'openwisp_monitoring.monitoring.tasks.delete_wifi_clients_and_sessions',
+            'task': 'immunity_monitoring.monitoring.tasks.delete_wifi_clients_and_sessions',
             'schedule': timedelta(days=180),
         },
     }
@@ -419,54 +419,54 @@ install the following python packages.
 Quickstart Guide
 ----------------
 
-Install OpenWISP Monitoring
+Install Immunity Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Install *OpenWISP Monitoring* using one of the methods mentioned in the
+Install *Immunity Monitoring* using one of the methods mentioned in the
 `"Installation instructions" <#installation-instructions>`_.
 
-Install openwisp-config on the device
+Install immunity-config on the device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Install the openwisp-config agent for OpenWrt
-<https://github.com/openwisp/openwisp-config#install-precompiled-package>`_
+`Install the immunity-config agent for OpenWrt
+<https://github.com/edge-servers/immunity-config#install-precompiled-package>`_
 on your device.
 
 Install monitoring packages on the device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Install the openwrt-openwisp-monitoring packages
-<https://github.com/openwisp/openwrt-openwisp-monitoring/tree/master#install-pre-compiled-packages>`_
+`Install the openwrt-immunity-monitoring packages
+<https://github.com/edge-servers/openwrt-immunity-monitoring/tree/master#install-pre-compiled-packages>`_
 on your device.
 
 These packages collect and send the
-monitoring data from the device to OpenWISP Monitoring and
-are required to collect `metrics <#openwisp_monitoring_metrics>`_
+monitoring data from the device to Immunity Monitoring and
+are required to collect `metrics <#immunity_monitoring_metrics>`_
 like interface traffic, WiFi clients, CPU load, memory usage, etc.
 
-**Note**: if you are an existing user of *openwisp-monitoring* and are using
+**Note**: if you are an existing user of *immunity-monitoring* and are using
 the legacy *monitoring template* for collecting metrics, we highly recommend
 `Migrating from monitoring scripts to monitoring packages
 <#migrating-from-monitoring-scripts-to-monitoring-packages>`_.
 
-Make sure OpenWISP can reach your devices
+Make sure Immunity can reach your devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In order to perform `active checks <#available-checks>`_ and other actions like
 `triggering the push of configuration changes
-<https://github.com/openwisp/openwisp-controller#how-to-configure-push-updates>`_,
+<https://github.com/edge-servers/immunity-controller#how-to-configure-push-updates>`_,
 `executing shell commands
-<https://github.com/openwisp/openwisp-controller#sending-commands-to-devices>`_ or
+<https://github.com/edge-servers/immunity-controller#sending-commands-to-devices>`_ or
 `performing firmware upgrades
-<https://github.com/openwisp/openwisp-firmware-upgrader#perform-a-firmware-upgrade-to-a-specific-device>`_,
-**the OpenWISP server needs to be able to reach the network devices**.
+<https://github.com/edge-servers/immunity-firmware-upgrader#perform-a-firmware-upgrade-to-a-specific-device>`_,
+**the Immunity server needs to be able to reach the network devices**.
 
-There are mainly two deployment scenarios for OpenWISP:
+There are mainly two deployment scenarios for Immunity:
 
-1. the OpenWISP server is deployed on the public internet and the devices are
+1. the Immunity server is deployed on the public internet and the devices are
    geographically distributed across different locations:
    **in this case a management tunnel is needed**
-2. the OpenWISP server is deployed on a computer/server which is located in
+2. the Immunity server is deployed on a computer/server which is located in
    the same Layer 2 network (that is, in the same LAN) where the devices
    are located.
    **in this case a management tunnel is NOT needed**
@@ -476,56 +476,56 @@ There are mainly two deployment scenarios for OpenWISP:
 
 This is the most common scenario:
 
-- the OpenWISP server is deployed to the public internet, hence the
+- the Immunity server is deployed to the public internet, hence the
   server has a public IPv4 (and IPv6) address and usually a valid
   SSL certificate provided by Mozilla Letsencrypt or another SSL provider
 - the network devices are geographically distributed across different
   locations (different cities, different regions, different countries)
 
-In this scenario, the OpenWISP application will not be able to reach the
+In this scenario, the Immunity application will not be able to reach the
 devices **unless a management tunnel** is used, for that reason having
 a management VPN like OpenVPN, Wireguard or any other tunneling solution
-is paramount, not only to allow OpenWISP to work properly, but also to
+is paramount, not only to allow Immunity to work properly, but also to
 be able to perform debugging and troubleshooting when needed.
 
 In this scenario, the following requirements are needed:
 
-- a VPN server must be installed in a way that the OpenWISP
+- a VPN server must be installed in a way that the Immunity
   server can reach the VPN peers, for more information on how to do this
-  via OpenWISP please refer to the following sections:
+  via Immunity please refer to the following sections:
 
   - `OpenVPN tunnel automation
-    <https://openwisp.io/docs/user/vpn.html>`_
+    <https://immunity.io/docs/user/vpn.html>`_
   - `Wireguard tunnel automation
-    <https://github.com/openwisp/openwisp-controller#how-to-setup-wireguard-tunnels>`_
+    <https://github.com/edge-servers/immunity-controller#how-to-setup-wireguard-tunnels>`_
 
   If you prefer to use other tunneling solutions (L2TP, Softether, etc.)
   and know how to configure those solutions on your own,
   that's totally fine as well.
 
-  If the OpenWISP server is connected to a network infrastructure
+  If the Immunity server is connected to a network infrastructure
   which allows it to reach the devices via pre-existing tunneling or
   Intranet solutions (eg: MPLS, SD-WAN), then setting up a VPN server
   is not needed, as long as there's a dedicated interface on OpenWrt
   which gets an IP address assigned to it and which is reachable from
-  the OpenWISP server.
+  the Immunity server.
 
 - The devices must be configured to join the management tunnel automatically,
   either via a pre-existing configuration in the firmware or via an
-  `OpenWISP Template <https://openwisp.io/docs/user/templates.html>`_.
+  `Immunity Template <https://immunity.io/docs/user/templates.html>`_.
 
-- The `openwisp-config <https://github.com/openwisp/openwisp-config>`_
+- The `immunity-config <https://github.com/edge-servers/immunity-config>`_
   agent on the devices must be configured to specify
   the ``management_interface`` option, the agent will communicate the
-  IP of the management interface to the OpenWISP Server and OpenWISP will
+  IP of the management interface to the Immunity Server and Immunity will
   use the management IP for reaching the device.
 
   For example, if the *management interface* is named ``tun0``,
-  the openwisp-config configuration should look like the following example:
+  the immunity-config configuration should look like the following example:
 
 .. code-block:: text
 
-    # In /etc/config/openwisp on the device
+    # In /etc/config/immunity on the device
 
     config controller 'http'
         # ... other configuration directives ...
@@ -534,13 +534,13 @@ In this scenario, the following requirements are needed:
 2. LAN deployment
 #################
 
-When the OpenWISP server and the network devices are deployed in the same
-L2 network (eg: an office LAN) and the OpenWISP server is reachable
-on the LAN address, OpenWISP can then use the **Last IP** field of the
+When the Immunity server and the network devices are deployed in the same
+L2 network (eg: an office LAN) and the Immunity server is reachable
+on the LAN address, Immunity can then use the **Last IP** field of the
 devices to reach them.
 
 In this scenario it's necessary to set the
-`"OPENWISP_MONITORING_MANAGEMENT_IP_ONLY" <#openwisp-monitoring-management-ip-only>`_
+`"OPENWISP_MONITORING_MANAGEMENT_IP_ONLY" <#immunity-monitoring-management-ip-only>`_
 setting to ``False``.
 
 Creating checks for a device
@@ -557,17 +557,17 @@ Passive vs Active Metric Collection
 -----------------------------------
 
 The `the different device metric
-<https://github.com/openwisp/openwisp-monitoring#default-metrics>`_
-collected by OpenWISP Monitoring can be divided in two categories:
+<https://github.com/edge-servers/immunity-monitoring#default-metrics>`_
+collected by Immunity Monitoring can be divided in two categories:
 
-1. **metrics collected actively by OpenWISP**:
+1. **metrics collected actively by Immunity**:
    these metrics are collected by the celery workers running on the
-   OpenWISP server, which continuously sends network requests to the
+   Immunity server, which continuously sends network requests to the
    devices and store the results;
-2. **metrics collected passively by OpenWISP**:
+2. **metrics collected passively by Immunity**:
    these metrics are sent by the
-   `openwrt-openwisp-monitoring agent <#install-monitoring-packages-on-the-device>`_
-   installed on the network devices and are collected by OpenWISP via
+   `openwrt-immunity-monitoring agent <#install-monitoring-packages-on-the-device>`_
+   installed on the network devices and are collected by Immunity via
    its REST API.
 
 The `"Available Checks" <#available-checks>`_ section of this document
@@ -617,16 +617,16 @@ Device Status
 
 This metric stores the status of the device for viewing purposes.
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/device-status-1.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/device-status-1.png
   :align: center
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/device-status-2.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/device-status-2.png
   :align: center
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/device-status-3.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/device-status-3.png
   :align: center
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/device-status-4.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/device-status-4.png
   :align: center
 
 Ping
@@ -646,17 +646,17 @@ Ping
 
 **Uptime**:
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/uptime.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/uptime.png
   :align: center
 
 **Packet loss**:
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/packet-loss.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/packet-loss.png
   :align: center
 
 **Round Trip Time**:
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/rtt.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/rtt.png
   :align: center
 
 Traffic
@@ -684,7 +684,7 @@ Traffic
 | **charts**:        | ``traffic``                                                              |
 +--------------------+--------------------------------------------------------------------------+
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/1.1/traffic.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/1.1/traffic.png
   :align: center
 
 WiFi Clients
@@ -713,7 +713,7 @@ WiFi Clients
 +--------------------+--------------------------------------------------------------------------+
 
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/wifi-clients.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/wifi-clients.png
   :align: center
 
 Memory Usage
@@ -731,7 +731,7 @@ Memory Usage
 | **charts**:        | ``memory``                                                                                                                           |
 +--------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/memory.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/memory.png
   :align: center
 
 CPU Load
@@ -749,7 +749,7 @@ CPU Load
 | **charts**:        | ``load``                                           |
 +--------------------+----------------------------------------------------+
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/cpu-load.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/cpu-load.png
   :align: center
 
 Disk Usage
@@ -767,7 +767,7 @@ Disk Usage
 | **charts**:        | ``disk``          |
 +--------------------+-------------------+
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/disk-usage.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/disk-usage.png
   :align: center
 
 Mobile Signal Strength
@@ -785,7 +785,7 @@ Mobile Signal Strength
 | **charts**:        | ``signal_strength``                     |
 +--------------------+-----------------------------------------+
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/signal-strength.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/signal-strength.png
   :align: center
 
 Mobile Signal Quality
@@ -803,7 +803,7 @@ Mobile Signal Quality
 | **charts**:        | ``signal_quality``                      |
 +--------------------+-----------------------------------------+
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/signal-quality.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/signal-quality.png
   :align: center
 
 Mobile Access Technology in use
@@ -821,7 +821,7 @@ Mobile Access Technology in use
 | **charts**:        | ``access_tech``   |
 +--------------------+-------------------+
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/access-technology.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/access-technology.png
   :align: center
 
 Iperf3
@@ -843,47 +843,47 @@ Iperf3
 
 **Bandwidth**:
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/1.1/bandwidth.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/1.1/bandwidth.png
   :align: center
 
 **Transferred Data**:
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/1.1/transferred-data.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/1.1/transferred-data.png
   :align: center
 
 **Retransmits**:
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/1.1/retransmits.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/1.1/retransmits.png
   :align: center
 
 **Jitter**:
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/1.1/jitter.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/1.1/jitter.png
   :align: center
 
 **Datagram**:
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/1.1/datagram.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/1.1/datagram.png
   :align: center
 
 **Datagram loss**:
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/1.1/datagram-loss.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/1.1/datagram-loss.png
   :align: center
 
 For more info on how to configure and use Iperf3, please refer to
 `iperf3 check usage instructions <#iperf3-check-usage-instructions>`_.
 
 **Note:** Iperf3 charts uses ``connect_points=True`` in
-`default chart configuration <#openwisp_monitoring_charts>`_ that joins it's individual chart data points.
+`default chart configuration <#immunity_monitoring_charts>`_ that joins it's individual chart data points.
 
 Dashboard Monitoring Charts
 ---------------------------
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/blob/docs/docs/1.1/dashboard-charts.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/blob/docs/docs/1.1/dashboard-charts.png
   :align: center
 
-OpenWISP Monitoring adds two timeseries charts to the admin dashboard:
+Immunity Monitoring adds two timeseries charts to the admin dashboard:
 
 - **General WiFi clients Chart**: Shows the number of connected clients to the WiFi
   interfaces of devices in the network.
@@ -891,12 +891,12 @@ OpenWISP Monitoring adds two timeseries charts to the admin dashboard:
 
 You can configure the interfaces included in the **General traffic chart** using
 the `"OPENWISP_MONITORING_DASHBOARD_TRAFFIC_CHART"
-<#openwisp_monitoring_dashboard_traffic_chart>`_ setting.
+<#immunity_monitoring_dashboard_traffic_chart>`_ setting.
 
 Adaptive size charts
 --------------------
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/1.1/adaptive-chart.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/1.1/adaptive-chart.png
    :align: center
 
 When configuring charts, it is possible to flag their unit
@@ -926,7 +926,7 @@ Example taken from the default configuration of the traffic chart:
 Monitoring WiFi Sessions
 ------------------------
 
-OpenWISP Monitoring maintains a record of WiFi sessions created by clients
+Immunity Monitoring maintains a record of WiFi sessions created by clients
 joined to a radio of managed devices. The WiFi sessions are created
 asynchronously from the monitoring data received from the device.
 
@@ -934,26 +934,26 @@ You can filter both currently open sessions and past sessions by their
 *start* or *stop* time or *organization* or *group* of the device clients
 are connected to or even directly by a *device* name or ID.
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/wifi-session-changelist.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/wifi-session-changelist.png
   :align: center
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/wifi-session-change.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/wifi-session-change.png
   :align: center
 
 You can disable this feature by configuring
-`OPENWISP_MONITORING_WIFI_SESSIONS_ENABLED <#openwisp_monitoring_wifi_sessions_enabled>`_
+`OPENWISP_MONITORING_WIFI_SESSIONS_ENABLED <#immunity_monitoring_wifi_sessions_enabled>`_
 setting.
 
 You can also view open WiFi sessions of a device directly from the device's change admin
 under the "WiFi Sessions" tab.
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/device-wifi-session-inline.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/device-wifi-session-inline.png
   :align: center
 
 Scheduled deletion of WiFi sessions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-OpenWISP Monitoring provides a celery task to automatically delete
+Immunity Monitoring provides a celery task to automatically delete
 WiFi sessions older than a pre-configured number of days. In order to run this
 task periodically, you will need to configure ``CELERY_BEAT_SCHEDULE`` setting as shown
 in `setup instructions <#setup-integrate-in-an-existing-django-project>`_.
@@ -968,7 +968,7 @@ then configure ``CELERY_BEAT_SCHEDULE`` as follows:
 
     CELERY_BEAT_SCHEDULE = {
         'delete_wifi_clients_and_sessions': {
-            'task': 'openwisp_monitoring.monitoring.tasks.delete_wifi_clients_and_sessions',
+            'task': 'immunity_monitoring.monitoring.tasks.delete_wifi_clients_and_sessions',
             'schedule': timedelta(days=1),
             'args': (30,), # Here we have defined 30 instead of 180 as shown in setup instructions
         },
@@ -1013,7 +1013,7 @@ You can change the default values used for ping checks using
 Configuration applied
 ~~~~~~~~~~~~~~~~~~~~~
 
-This check ensures that the `openwisp-config agent <https://github.com/openwisp/openwisp-config/>`_
+This check ensures that the `immunity-config agent <https://github.com/edge-servers/immunity-config/>`_
 is running and applying configuration changes in a timely manner.
 You may choose to disable auto creation of this check by using the
 setting `OPENWISP_MONITORING_AUTO_DEVICE_CONFIG_CHECK <#OPENWISP_MONITORING_AUTO_DEVICE_CONFIG_CHECK>`_.
@@ -1051,7 +1051,7 @@ Iperf3 Check Usage Instructions
 1. Make sure iperf3 is installed on the device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Register your device to OpenWISP and make sure the `iperf3 openwrt package
+Register your device to Immunity and make sure the `iperf3 openwrt package
 <https://openwrt.org/packages/pkgdata/iperf3>`_ is installed on the device,
 eg:
 
@@ -1060,28 +1060,28 @@ eg:
     opkg install iperf3  # if using without authentication
     opkg install iperf3-ssl  # if using with authentication (read below for more info)
 
-2. Ensure SSH access from OpenWISP is enabled on your devices
+2. Ensure SSH access from Immunity is enabled on your devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Follow the steps in `"How to configure push updates" section of the
-OpenWISP documentation
-<https://openwisp.io/docs/user/configure-push-updates.html>`_
-to allow SSH access to you device from OpenWISP.
+Immunity documentation
+<https://immunity.io/docs/user/configure-push-updates.html>`_
+to allow SSH access to you device from Immunity.
 
 **Note:** Make sure device connection is enabled
 & working with right update strategy i.e. ``OpenWRT SSH``.
 
-.. image:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/1.1/enable-openwrt-ssh.png
-  :alt: Enable ssh access from openwisp to device
+.. image:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/1.1/enable-openwrt-ssh.png
+  :alt: Enable ssh access from immunity to device
   :align: center
 
 3. Set up and configure Iperf3 server settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After having deployed your Iperf3 servers, you need to
-configure the iperf3 settings on the django side of OpenWISP,
+configure the iperf3 settings on the django side of Immunity,
 see the `test project settings for reference
-<https://github.com/openwisp/openwisp-monitoring/blob/master/tests/openwisp2/settings.py>`_.
+<https://github.com/edge-servers/immunity-monitoring/blob/master/tests/immunity2/settings.py>`_.
 
 The host can be specified by hostname, IPv4 literal, or IPv6 literal.
 Example:
@@ -1093,7 +1093,7 @@ Example:
        'a9734710-db30-46b0-a2fc-01f01046fe4f': {
            # Some public iperf3 servers
            # https://iperf.fr/iperf-servers.php#public-servers
-           'host': ['iperf3.openwisp.io', '2001:db8::1', '192.168.5.2'],
+           'host': ['iperf3.immunity.io', '2001:db8::1', '192.168.5.2'],
            'client_options': {
                'port': 5209,
                'udp': {'bitrate': '30M'},
@@ -1103,7 +1103,7 @@ Example:
        # another org
        'b9734710-db30-46b0-a2fc-01f01046fe4f': {
            # available iperf3 servers
-           'host': ['iperf3.openwisp2.io', '192.168.5.3'],
+           'host': ['iperf3.immunity2.io', '192.168.5.3'],
            'client_options': {
                'port': 5207,
                'udp': {'bitrate': '50M'},
@@ -1129,12 +1129,12 @@ The celery-beat configuration for the iperf3 check needs to be added too:
         # Other celery beat configurations
         # Celery beat configuration for iperf3 check
         'run_iperf3_checks': {
-            'task': 'openwisp_monitoring.check.tasks.run_checks',
+            'task': 'immunity_monitoring.check.tasks.run_checks',
             # https://docs.celeryq.dev/en/latest/userguide/periodic-tasks.html#crontab-schedules
             # Executes check every 5 mins from 00:00 AM to 6:00 AM (night)
             'schedule': crontab(minute='*/5', hour='0-6'),
             # Iperf3 check path
-            'args': (['openwisp_monitoring.check.classes.Iperf3'],),
+            'args': (['immunity_monitoring.check.classes.Iperf3'],),
             'relative': True,
         }
     }
@@ -1154,7 +1154,7 @@ For testing purposes, you can run this check manually using the
 
 After that, you should see the iperf3 network measurements charts.
 
-.. image:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/1.1/iperf3-charts.png
+.. image:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/1.1/iperf3-charts.png
   :alt: Iperf3 network measurement charts
 
 Iperf3 check parameters
@@ -1304,7 +1304,7 @@ in the settings:
 
    OPENWISP_MONITORING_IPERF3_CHECK_CONFIG = {
        'a9734710-db30-46b0-a2fc-01f01046fe4f': {
-           'host': ['iperf1.openwisp.io', 'iperf2.openwisp.io', '192.168.5.2'],
+           'host': ['iperf1.immunity.io', 'iperf2.immunity.io', '192.168.5.2'],
            # All three parameters (username, password, rsa_publc_key)
            # are required for iperf3 authentication
            'username': 'iperfuser',
@@ -1337,18 +1337,18 @@ We can add checks and define alert settings directly from the **device page**.
 
 To add a check, you just need to select an available **check type** as shown below:
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/1.1/device-inline-check.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/1.1/device-inline-check.png
   :align: center
 
 The following example shows how to use the
-`OPENWISP_MONITORING_METRICS setting <#openwisp_monitoring_metrics>`_
+`OPENWISP_MONITORING_METRICS setting <#immunity_monitoring_metrics>`_
 to reconfigure the system for `iperf3 check <#iperf3-1>`_ to send an alert if
 the measured **TCP bandwidth** has been less than **10 Mbit/s** for more than **2 days**.
 
 1. By default, `Iperf3 checks <#iperf3-1>`_ come with default alert settings,
 but it is easy to customize alert settings through the device page as shown below:
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/1.1/device-inline-alertsettings.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/1.1/device-inline-alertsettings.png
   :align: center
 
 2. Now, add the following notification configuration to send an alert for **TCP bandwidth**:
@@ -1389,16 +1389,16 @@ but it is easy to customize alert settings through the device page as shown belo
        },
    }
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/1.1/alert_field_warn.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/1.1/alert_field_warn.png
   :align: center
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/1.1/alert_field_info.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/1.1/alert_field_info.png
   :align: center
 
 **Note:** To access the features described above, the user must have permissions for ``Check`` and ``AlertSetting`` inlines,
 these permissions are included by default in the "Administrator" and "Operator" groups and are shown in the screenshot below.
 
-.. figure:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/1.1/inline-permissions.png
+.. figure:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/1.1/inline-permissions.png
   :align: center
 
 Settings
@@ -1416,10 +1416,10 @@ Settings
 .. code-block:: python
 
     TIMESERIES_DATABASE = {
-        'BACKEND': 'openwisp_monitoring.db.backends.influxdb',
-        'USER': 'openwisp',
-        'PASSWORD': 'openwisp',
-        'NAME': 'openwisp2',
+        'BACKEND': 'immunity_monitoring.db.backends.influxdb',
+        'USER': 'immunity',
+        'PASSWORD': 'immunity',
+        'NAME': 'immunity2',
         'HOST': 'localhost',
         'PORT': '8086',
         'OPTIONS': {
@@ -1435,7 +1435,7 @@ setting:
 | **Key**       | ``Description``                                                                      |
 +---------------+--------------------------------------------------------------------------------------+
 | ``BACKEND``   | The timeseries database backend to use. You can select one of the backends           |
-|               | located in ``openwisp_monitoring.db.backends``                                       |
+|               | located in ``immunity_monitoring.db.backends``                                       |
 +---------------+--------------------------------------------------------------------------------------+
 | ``USER``      | User for logging into the timeseries database                                        |
 +---------------+--------------------------------------------------------------------------------------+
@@ -1459,7 +1459,7 @@ setting:
 **Note:** UDP packets can have a maximum size of 64KB. When using UDP for writing timeseries
 data, if the size of the data exceeds 64KB, TCP mode will be used instead.
 
-**Note:** If you want to use the ``openwisp_monitoring.db.backends.influxdb`` backend
+**Note:** If you want to use the ``immunity_monitoring.db.backends.influxdb`` backend
 with UDP writes enabled, then you need to enable two different ports for UDP
 (each for different retention policy) in your InfluxDB configuration. The UDP configuration
 section of your InfluxDB should look similar to the following:
@@ -1470,20 +1470,20 @@ section of your InfluxDB should look similar to the following:
     [[udp]]
     enabled = true
     bind-address = "127.0.0.1:8089"
-    database = "openwisp2"
+    database = "immunity2"
 
     # For writing data with the "short" retention policy
     [[udp]]
     enabled = true
     bind-address = "127.0.0.1:8090"
-    database = "openwisp2"
+    database = "immunity2"
     retention-policy = 'short'
 
-If you are using `ansible-openwisp2 <https://github.com/openwisp/ansible-openwisp2>`_
-for deploying OpenWISP, you can set the ``influxdb_udp_mode`` ansible variable to ``true``
+If you are using `ansible-immunity2 <https://github.com/edge-servers/ansible-immunity2>`_
+for deploying Immunity, you can set the ``influxdb_udp_mode`` ansible variable to ``true``
 in your playbook, this will make the ansible role automatically configure the InfluxDB UDP listeners.
-You can refer to the `ansible-ow-influxdb's <https://github.com/openwisp/ansible-ow-influxdb#role-variables>`_
-(a dependency of ansible-openwisp2) documentation to learn more.
+You can refer to the `ansible-ow-influxdb's <https://github.com/edge-servers/ansible-ow-influxdb#role-variables>`_
+(a dependency of ansible-immunity2) documentation to learn more.
 
 ``OPENWISP_MONITORING_DEFAULT_RETENTION_POLICY``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1532,7 +1532,7 @@ Whether ping checks are created automatically for devices.
 +--------------+-------------+
 
 This setting allows to override the default ping check configuration defined in
-``openwisp_monitoring.check.classes.ping.DEFAULT_PING_CHECK_CONFIG``.
+``immunity_monitoring.check.classes.ping.DEFAULT_PING_CHECK_CONFIG``.
 
 For example, if you want to change only the **timeout** of
 ``ping`` you can use:
@@ -1547,7 +1547,7 @@ For example, if you want to change only the **timeout** of
 
 If you are overriding the default value for any parameter
 beyond the maximum or minimum value defined in
-``openwisp_monitoring.check.classes.ping.DEFAULT_PING_CHECK_CONFIG``,
+``immunity_monitoring.check.classes.ping.DEFAULT_PING_CHECK_CONFIG``,
 you will also need to override the ``maximum`` or ``minimum`` fields
 as following:
 
@@ -1610,7 +1610,7 @@ created automatically for newly registered devices. It's disabled by default.
 +--------------+-------------+
 
 This setting allows to override the default iperf3 check configuration defined in
-``openwisp_monitoring.check.classes.iperf3.DEFAULT_IPERF3_CHECK_CONFIG``.
+``immunity_monitoring.check.classes.iperf3.DEFAULT_IPERF3_CHECK_CONFIG``.
 
 For example, you can change the values of `supported iperf3 check parameters <#iperf3-check-parameters>`_.
 
@@ -1621,7 +1621,7 @@ For example, you can change the values of `supported iperf3 check parameters <#i
        'a9734710-db30-46b0-a2fc-01f01046fe4f': {
            # Some public iperf3 servers
            # https://iperf.fr/iperf-servers.php#public-servers
-           'host': ['iperf3.openwisp.io', '2001:db8::1', '192.168.5.2'],
+           'host': ['iperf3.immunity.io', '2001:db8::1', '192.168.5.2'],
            'client_options': {
                'port': 6209,
                # Number of parallel client streams to run
@@ -1746,13 +1746,13 @@ feature.
 By default, only the management IP will be used to perform active checks to
 the devices.
 
-If the devices are connecting to your OpenWISP instance using a shared layer2
+If the devices are connecting to your Immunity instance using a shared layer2
 network, hence the OpenWSP server can reach the devices using the ``last_ip``
 field, you can set this to ``False``.
 
 **Note:** If this setting is not configured, it will fallback to the value of
 `OPENWISP_CONTROLLER_MANAGEMENT_IP_ONLY setting
-<https://github.com/openwisp/openwisp-controller#openwisp_controller_management_ip_only>`_.
+<https://github.com/edge-servers/immunity-controller#immunity_controller_management_ip_only>`_.
 If ``OPENWISP_CONTROLLER_MANAGEMENT_IP_ONLY`` also not configured,
 then it will fallback to ``True``.
 
@@ -1766,17 +1766,17 @@ then it will fallback to ``True``.
 +--------------+-------------+
 
 When device recovery detection is enabled, recoveries are discovered as soon as
-a device contacts the openwisp system again (eg: to get the configuration checksum
+a device contacts the immunity system again (eg: to get the configuration checksum
 or to send monitoring metrics).
 
 This feature is enabled by default.
 
 If you use OpenVPN as the management VPN, you may want to check out a similar
-integration built in **openwisp-network-topology**: when the status of an OpenVPN link
+integration built in **immunity-network-topology**: when the status of an OpenVPN link
 changes (detected by monitoring the status information of OpenVPN), the
 network topology module will trigger the monitoring checks.
 For more information see:
-`Network Topology Device Integration <https://github.com/openwisp/openwisp-network-topology#integration-with-openwisp-controller-and-openwisp-monitoring>`_
+`Network Topology Device Integration <https://github.com/edge-servers/immunity-network-topology#integration-with-immunity-controller-and-immunity-monitoring>`_
 
 ``OPENWISP_MONITORING_MAC_VENDOR_DETECTION``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1890,11 +1890,11 @@ an overview of the network at glance.
 
 This feature is enabled by default and depends on the setting
 ``OPENWISP_ADMIN_DASHBOARD_ENABLED`` from
-`openwisp-utils <https://github.com/openwisp/openwisp-utils>`__
+`immunity-utils <https://github.com/edge-servers/immunity-utils>`__
 being set to ``True`` (which is the default).
 
 You can turn this off if you do not use the geographic features
-of OpenWISP.
+of Immunity.
 
 ``OPENWISP_MONITORING_DASHBOARD_TRAFFIC_CHART``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1945,7 +1945,7 @@ of ``__all__`` configuration.
 
 This setting allows to define additional metric configuration or to override
 the default metric configuration defined in
-``openwisp_monitoring.monitoring.configuration.DEFAULT_METRICS``.
+``immunity_monitoring.monitoring.configuration.DEFAULT_METRICS``.
 
 For example, if you want to change only the **field_name** of
 ``clients`` metric to ``wifi_clients`` you can use:
@@ -2038,7 +2038,7 @@ call in your custom code (eg: a custom check class), you can do so as follows:
 
 This setting allows to define additional charts or to override
 the default chart configuration defined in
-``openwisp_monitoring.monitoring.configuration.DEFAULT_CHARTS``.
+``immunity_monitoring.monitoring.configuration.DEFAULT_CHARTS``.
 
 In the following example, we modify the description of the traffic chart:
 
@@ -2135,9 +2135,9 @@ urls to another installed module, example, ``myapp.urls``.
 | **default**: | ``None``    |
 +--------------+-------------+
 
-If you have a seperate server for API of openwisp-monitoring on a different
+If you have a seperate server for API of immunity-monitoring on a different
 domain, you can use this option to change the base of the url, this will
-enable you to point all the API urls to your openwisp-monitoring API server's
+enable you to point all the API urls to your immunity-monitoring API server's
 domain, example: ``https://mymonitoring.myapp.com``.
 
 ``OPENWISP_MONITORING_CACHE_TIMEOUT``
@@ -2154,8 +2154,8 @@ This setting allows to configure timeout (in seconds) for monitoring data cache.
 Registering / Unregistering Metric Configuration
 ------------------------------------------------
 
-**OpenWISP Monitoring** provides registering and unregistering metric configuration through utility functions
-``openwisp_monitoring.monitoring.configuration.register_metric`` and ``openwisp_monitoring.monitoring.configuration.unregister_metric``.
+**Immunity Monitoring** provides registering and unregistering metric configuration through utility functions
+``immunity_monitoring.monitoring.configuration.register_metric`` and ``immunity_monitoring.monitoring.configuration.unregister_metric``.
 Using these functions you can register or unregister metric configurations from anywhere in your code.
 
 ``register_metric``
@@ -2176,7 +2176,7 @@ An example usage has been shown below.
 .. code-block:: python
 
     from django.utils.translation import gettext_lazy as _
-    from openwisp_monitoring.monitoring.configuration import register_metric
+    from immunity_monitoring.monitoring.configuration import register_metric
 
     # Define configuration of your metric
     metric_config = {
@@ -2296,7 +2296,7 @@ which allows ``AlertSettings`` to check the ``threshold`` on
 is already registered with same name (not to be confused with verbose_name).
 
 If you don't need to register a new metric but need to change a specific key of an
-existing metric configuration, you can use `OPENWISP_MONITORING_METRICS <#openwisp_monitoring_metrics>`_.
+existing metric configuration, you can use `OPENWISP_MONITORING_METRICS <#immunity_monitoring_metrics>`_.
 
 ``unregister_metric``
 ~~~~~~~~~~~~~~~~~~~~~
@@ -2313,7 +2313,7 @@ An example usage is shown below.
 
 .. code-block:: python
 
-    from openwisp_monitoring.monitoring.configuration import unregister_metric
+    from immunity_monitoring.monitoring.configuration import unregister_metric
 
     # Unregister previously registered metric configuration
     unregister_metric('metric_name')
@@ -2324,8 +2324,8 @@ configuration is not registered.
 Registering / Unregistering Chart Configuration
 -----------------------------------------------
 
-**OpenWISP Monitoring** provides registering and unregistering chart configuration through utility functions
-``openwisp_monitoring.monitoring.configuration.register_chart`` and ``openwisp_monitoring.monitoring.configuration.unregister_chart``.
+**Immunity Monitoring** provides registering and unregistering chart configuration through utility functions
+``immunity_monitoring.monitoring.configuration.register_chart`` and ``immunity_monitoring.monitoring.configuration.unregister_chart``.
 Using these functions you can register or unregister chart configurations from anywhere in your code.
 
 ``register_chart``
@@ -2345,7 +2345,7 @@ An example usage has been shown below.
 
 .. code-block:: python
 
-    from openwisp_monitoring.monitoring.configuration import register_chart
+    from immunity_monitoring.monitoring.configuration import register_chart
 
     # Define configuration of your chart
     chart_config = {
@@ -2370,7 +2370,7 @@ An example usage has been shown below.
 is already registered with same name (not to be confused with verbose_name).
 
 If you don't need to register a new chart but need to change a specific key of an
-existing chart configuration, you can use `OPENWISP_MONITORING_CHARTS <#openwisp_monitoring_charts>`_.
+existing chart configuration, you can use `OPENWISP_MONITORING_CHARTS <#immunity_monitoring_charts>`_.
 
 ``unregister_chart``
 ~~~~~~~~~~~~~~~~~~~~
@@ -2387,7 +2387,7 @@ An example usage is shown below.
 
 .. code-block:: python
 
-    from openwisp_monitoring.monitoring.configuration import unregister_chart
+    from immunity_monitoring.monitoring.configuration import unregister_chart
 
     # Unregister previously registered chart configuration
     unregister_chart('chart_name')
@@ -2398,12 +2398,12 @@ configuration is not registered.
 Registering new notification types
 ----------------------------------
 
-You can define your own notification types using ``register_notification_type`` function from OpenWISP
-Notifications. For more information, see the relevant `openwisp-notifications section about registering notification types
-<https://github.com/openwisp/openwisp-notifications#registering--unregistering-notification-types>`_.
+You can define your own notification types using ``register_notification_type`` function from Immunity
+Notifications. For more information, see the relevant `immunity-notifications section about registering notification types
+<https://github.com/edge-servers/immunity-notifications#registering--unregistering-notification-types>`_.
 
 Once a new notification type is registered, you have to use the `"notify" signal provided in
-openwisp-notifications <https://github.com/openwisp/openwisp-notifications#sending-notifications>`_
+immunity-notifications <https://github.com/edge-servers/immunity-notifications#sending-notifications>`_
 to send notifications for this type.
 
 Exceptions
@@ -2412,25 +2412,25 @@ Exceptions
 ``TimeseriesWriteException``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Path**: ``openwisp_monitoring.db.exceptions.TimeseriesWriteException``
+**Path**: ``immunity_monitoring.db.exceptions.TimeseriesWriteException``
 
 If there is any failure due while writing data in timeseries database, this exception shall
 be raised with a helpful error message explaining the cause of the failure.
 This exception will normally be caught and the failed write task will be retried in the background
 so that there is no loss of data if failures occur due to overload of Timeseries server.
-You can read more about this retry mechanism at `OPENWISP_MONITORING_WRITE_RETRY_OPTIONS <#openwisp-monitoring-write-retry-options>`_.
+You can read more about this retry mechanism at `OPENWISP_MONITORING_WRITE_RETRY_OPTIONS <#immunity-monitoring-write-retry-options>`_.
 
 ``InvalidMetricConfigException``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Path**: ``openwisp_monitoring.monitoring.exceptions.InvalidMetricConfigException``
+**Path**: ``immunity_monitoring.monitoring.exceptions.InvalidMetricConfigException``
 
 This exception shall be raised if the metric configuration is broken.
 
 ``InvalidChartConfigException``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Path**: ``openwisp_monitoring.monitoring.exceptions.InvalidChartConfigException``
+**Path**: ``immunity_monitoring.monitoring.exceptions.InvalidChartConfigException``
 
 This exception shall be raised if the chart configuration is broken.
 
@@ -2440,15 +2440,15 @@ Rest API
 Live documentation
 ~~~~~~~~~~~~~~~~~~
 
-.. image:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/api-doc.png
+.. image:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/api-doc.png
 
 A general live API documentation (following the OpenAPI specification) at ``/api/v1/docs/``.
 
 Browsable web interface
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/api-ui-1.png
-.. image:: https://github.com/openwisp/openwisp-monitoring/raw/docs/docs/api-ui-2.png
+.. image:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/api-ui-1.png
+.. image:: https://github.com/edge-servers/immunity-monitoring/raw/docs/docs/api-ui-2.png
 
 Additionally, opening any of the endpoints `listed below <#list-of-endpoints>`_
 directly in the browser will show the `browsable API interface of Django-REST-Framework
@@ -2606,8 +2606,8 @@ If the request is made without passing the ``time`` argument,
 the server local time will be used.
 
 The ``time`` parameter was added to support `resilient collection
-and sending of data by the OpenWISP Monitoring Agent
-<https://github.com/openwisp/openwrt-openwisp-monitoring#collecting-vs-sending>`_,
+and sending of data by the Immunity Monitoring Agent
+<https://github.com/edge-servers/openwrt-immunity-monitoring#collecting-vs-sending>`_,
 this feature allows sending data collected while the device is offline.
 
 List nearby devices
@@ -2703,7 +2703,7 @@ Signals
 ``device_metrics_received``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Path**: ``openwisp_monitoring.device.signals.device_metrics_received``
+**Path**: ``immunity_monitoring.device.signals.device_metrics_received``
 
 **Arguments**:
 
@@ -2721,7 +2721,7 @@ it is not sent if the response was not successful.
 ``health_status_changed``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Path**: ``openwisp_monitoring.device.signals.health_status_changed``
+**Path**: ``immunity_monitoring.device.signals.health_status_changed``
 
 **Arguments**:
 
@@ -2733,7 +2733,7 @@ This signal is emitted only if the health status of DeviceMonitoring object gets
 ``threshold_crossed``
 ~~~~~~~~~~~~~~~~~~~~~
 
-**Path**: ``openwisp_monitoring.monitoring.signals.threshold_crossed``
+**Path**: ``immunity_monitoring.monitoring.signals.threshold_crossed``
 
 **Arguments**:
 
@@ -2753,7 +2753,7 @@ alert settings is crossed.
 ``pre_metric_write``
 ~~~~~~~~~~~~~~~~~~~~
 
-**Path**: ``openwisp_monitoring.monitoring.signals.pre_metric_write``
+**Path**: ``immunity_monitoring.monitoring.signals.pre_metric_write``
 
 **Arguments**:
 
@@ -2768,7 +2768,7 @@ the timeseries database.
 ``post_metric_write``
 ~~~~~~~~~~~~~~~~~~~~~
 
-**Path**: ``openwisp_monitoring.monitoring.signals.post_metric_write``
+**Path**: ``immunity_monitoring.monitoring.signals.post_metric_write``
 
 **Arguments**:
 
@@ -2812,60 +2812,60 @@ Example usage:
 Monitoring scripts
 ------------------
 
-Monitoring scripts are now deprecated in favour of `monitoring packages <https://github.com/openwisp/openwrt-openwisp-monitoring#openwrt-openwisp-monitoring>`_.
+Monitoring scripts are now deprecated in favour of `monitoring packages <https://github.com/edge-servers/openwrt-immunity-monitoring#openwrt-immunity-monitoring>`_.
 Follow the migration guide in `Migrating from monitoring scripts to monitoring packages <#migrating-from-monitoring-scripts-to-monitoring-packages>`_
 section of this documentation.
 
 Migrating from monitoring scripts to monitoring packages
 --------------------------------------------------------
 
-This section is intended for existing users of *openwisp-monitoring*.
-The older version of *openwisp-monitoring* used *monitoring scripts* that
-are now deprecated in favour of `monitoring packages <https://github.com/openwisp/openwrt-openwisp-monitoring#openwrt-openwisp-monitoring>`_.
+This section is intended for existing users of *immunity-monitoring*.
+The older version of *immunity-monitoring* used *monitoring scripts* that
+are now deprecated in favour of `monitoring packages <https://github.com/edge-servers/openwrt-immunity-monitoring#openwrt-immunity-monitoring>`_.
 
 If you already had a *monitoring template* created on your installation,
-then the migrations of *openwisp-monitoring* will update that template
+then the migrations of *immunity-monitoring* will update that template
 by making the following changes:
 
 - The file name of all scripts will be appended with ``legacy-`` keyword
   in order to differentiate them from the scripts bundled with the new packages.
-- The ``/usr/sbin/legacy-openwisp-monitoring`` (previously ``/usr/sbin/openwisp-monitoring``)
-  script will be updated to exit if `openwisp-monitoring package <https://github.com/openwisp/openwrt-openwisp-monitoring#openwrt-openwisp-monitoring>`_
+- The ``/usr/sbin/legacy-immunity-monitoring`` (previously ``/usr/sbin/immunity-monitoring``)
+  script will be updated to exit if `immunity-monitoring package <https://github.com/edge-servers/openwrt-immunity-monitoring#openwrt-immunity-monitoring>`_
   is installed on the device.
 
-Install the `monitoring packages <https://github.com/openwisp/openwrt-openwisp-monitoring#openwrt-openwisp-monitoring>`_
+Install the `monitoring packages <https://github.com/edge-servers/openwrt-immunity-monitoring#openwrt-immunity-monitoring>`_
 as mentioned in the `Install monitoring packages on device <#install-monitoring-packages-on-the-device>`_
 section of this documentation.
 
-After the proper configuration of the `openwisp-monitoring package <https://github.com/openwisp/openwrt-openwisp-monitoring#openwrt-openwisp-monitoring>`_
+After the proper configuration of the `immunity-monitoring package <https://github.com/edge-servers/openwrt-immunity-monitoring#openwrt-immunity-monitoring>`_
 on your device, you can remove the monitoring template from your devices.
 
 We suggest removing the monitoring template from the devices one at a time instead
 of deleting the template. This ensures the correctness of
-*openwisp monitoring package* configuration and you'll not miss out on
+*immunity monitoring package* configuration and you'll not miss out on
 any monitoring data.
 
 **Note:** If you have made changes to the default monitoring template created
-by *openwisp-monitoring* or you are using custom monitoring templates, then you should
+by *immunity-monitoring* or you are using custom monitoring templates, then you should
 remove such templates from the device before installing the
-`monitoring packages <https://github.com/openwisp/openwrt-openwisp-monitoring#openwrt-openwisp-monitoring>`_.
+`monitoring packages <https://github.com/edge-servers/openwrt-immunity-monitoring#openwrt-immunity-monitoring>`_.
 
-Extending openwisp-monitoring
+Extending immunity-monitoring
 -----------------------------
 
-One of the core values of the OpenWISP project is `Software Reusability <http://openwisp.io/docs/general/values.html#software-reusability-means-long-term-sustainability>`_,
-for this reason *openwisp-monitoring* provides a set of base classes
+One of the core values of the Immunity project is `Software Reusability <http://immunity.io/docs/general/values.html#software-reusability-means-long-term-sustainability>`_,
+for this reason *immunity-monitoring* provides a set of base classes
 which can be imported, extended and reused to create derivative apps.
 
-In order to implement your custom version of *openwisp-monitoring*,
+In order to implement your custom version of *immunity-monitoring*,
 you need to perform the steps described in the rest of this section.
 
-When in doubt, the code in the `test project <https://github.com/openwisp/openwisp-monitoring/tree/master/tests/openwisp2/>`_
-and the ``sample apps`` namely `sample_check <https://github.com/openwisp/openwisp-monitoring/tree/master/tests/openwisp2/sample_check/>`_,
-`sample_monitoring <https://github.com/openwisp/openwisp-monitoring/tree/master/tests/openwisp2/sample_monitoring/>`_, `sample_device_monitoring <https://github.com/openwisp/openwisp-monitoring/tree/master/tests/openwisp2/sample_device_monitoring/>`_
+When in doubt, the code in the `test project <https://github.com/edge-servers/immunity-monitoring/tree/master/tests/immunity2/>`_
+and the ``sample apps`` namely `sample_check <https://github.com/edge-servers/immunity-monitoring/tree/master/tests/immunity2/sample_check/>`_,
+`sample_monitoring <https://github.com/edge-servers/immunity-monitoring/tree/master/tests/immunity2/sample_monitoring/>`_, `sample_device_monitoring <https://github.com/edge-servers/immunity-monitoring/tree/master/tests/immunity2/sample_device_monitoring/>`_
 will guide you in the correct direction:
 just replicate and adapt that code to get a basic derivative of
-*openwisp-monitoring* working.
+*immunity-monitoring* working.
 
 **Premise**: if you plan on using a customized version of this module,
 we suggest to start with it since the beginning, because migrating your data
@@ -2874,8 +2874,8 @@ from the default module to your extended version may be time consuming.
 1. Initialize your custom module
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The first thing you need to do in order to extend any *openwisp-monitoring* app is create
-a new django app which will contain your custom version of that *openwisp-monitoring* app.
+The first thing you need to do in order to extend any *immunity-monitoring* app is create
+a new django app which will contain your custom version of that *immunity-monitoring* app.
 
 A django app is nothing more than a
 `python package <https://docs.python.org/3/tutorial/modules.html#packages>`_
@@ -2891,15 +2891,15 @@ which is available in your `PYTHON_PATH <https://docs.python.org/3/using/cmdline
 so that you can then import the result into your project.
 
 Now you need to add ``mycheck`` to ``INSTALLED_APPS`` in your ``settings.py``,
-ensuring also that ``openwisp_monitoring.check`` has been removed:
+ensuring also that ``immunity_monitoring.check`` has been removed:
 
 .. code-block:: python
 
     INSTALLED_APPS = [
         # ... other apps ...
-        # 'openwisp_monitoring.check',        <-- comment out or delete this line
-        # 'openwisp_monitoring.device',       <-- comment out or delete this line
-        # 'openwisp_monitoring.monitoring'    <-- comment out or delete this line
+        # 'immunity_monitoring.check',        <-- comment out or delete this line
+        # 'immunity_monitoring.device',       <-- comment out or delete this line
+        # 'immunity_monitoring.monitoring'    <-- comment out or delete this line
         'mycheck',
         'mydevicemonitoring',
         'mymonitoring',
@@ -2909,12 +2909,12 @@ ensuring also that ``openwisp_monitoring.check`` has been removed:
 For more information about how to work with django projects and django apps,
 please refer to the `"Tutorial: Writing your first Django app" in the django docunmentation <https://docs.djangoproject.com/en/dev/intro/tutorial01/>`_.
 
-2. Install ``openwisp-monitoring``
+2. Install ``immunity-monitoring``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Install (and add to the requirement of your project) *openwisp-monitoring*::
+Install (and add to the requirement of your project) *immunity-monitoring*::
 
-    pip install --U https://github.com/openwisp/openwisp-monitoring/tarball/master
+    pip install --U https://github.com/edge-servers/immunity-monitoring/tarball/master
 
 3. Add ``EXTENDED_APPS``
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2925,10 +2925,10 @@ Add the following to your ``settings.py``:
 
     EXTENDED_APPS = ['device_monitoring', 'monitoring', 'check']
 
-4. Add ``openwisp_utils.staticfiles.DependencyFinder``
+4. Add ``immunity_utils.staticfiles.DependencyFinder``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Add ``openwisp_utils.staticfiles.DependencyFinder`` to
+Add ``immunity_utils.staticfiles.DependencyFinder`` to
 ``STATICFILES_FINDERS`` in your ``settings.py``:
 
 .. code-block:: python
@@ -2936,13 +2936,13 @@ Add ``openwisp_utils.staticfiles.DependencyFinder`` to
     STATICFILES_FINDERS = [
         'django.contrib.staticfiles.finders.FileSystemFinder',
         'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-        'openwisp_utils.staticfiles.DependencyFinder',
+        'immunity_utils.staticfiles.DependencyFinder',
     ]
 
-5. Add ``openwisp_utils.loaders.DependencyLoader``
+5. Add ``immunity_utils.loaders.DependencyLoader``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Add ``openwisp_utils.loaders.DependencyLoader`` to ``TEMPLATES`` in your ``settings.py``:
+Add ``immunity_utils.loaders.DependencyLoader`` to ``TEMPLATES`` in your ``settings.py``:
 
 .. code-block:: python
 
@@ -2953,7 +2953,7 @@ Add ``openwisp_utils.loaders.DependencyLoader`` to ``TEMPLATES`` in your ``setti
                 'loaders': [
                     'django.template.loaders.filesystem.Loader',
                     'django.template.loaders.app_directories.Loader',
-                    'openwisp_utils.loaders.DependencyLoader',
+                    'immunity_utils.loaders.DependencyLoader',
                 ],
                 'context_processors': [
                     'django.template.context_processors.debug',
@@ -2970,12 +2970,12 @@ Add ``openwisp_utils.loaders.DependencyLoader`` to ``TEMPLATES`` in your ``setti
 
 Please refer to the following files in the sample app of the test project:
 
-- `sample_check/__init__.py <https://github.com/openwisp/openwisp-monitoring/tree/master/tests/openwisp2/sample_check/__init__.py>`_.
-- `sample_check/apps.py <https://github.com/openwisp/openwisp-monitoring/tree/master/tests/openwisp2/sample_check/apps.py>`_.
-- `sample_monitoring/__init__.py <https://github.com/openwisp/openwisp-monitoring/tree/master/tests/openwisp2/sample_monitoring/__init__.py>`_.
-- `sample_monitoring/apps.py <https://github.com/openwisp/openwisp-monitoring/tree/master/tests/openwisp2/sample_monitoring/apps.py>`_.
-- `sample_device_monitoring/__init__.py <https://github.com/openwisp/openwisp-monitoring/tree/master/tests/openwisp2/sample_device_monitoring/__init__.py>`_.
-- `sample_device_monitoring/apps.py <https://github.com/openwisp/openwisp-monitoring/tree/master/tests/openwisp2/sample_device_monitoring/apps.py>`_.
+- `sample_check/__init__.py <https://github.com/edge-servers/immunity-monitoring/tree/master/tests/immunity2/sample_check/__init__.py>`_.
+- `sample_check/apps.py <https://github.com/edge-servers/immunity-monitoring/tree/master/tests/immunity2/sample_check/apps.py>`_.
+- `sample_monitoring/__init__.py <https://github.com/edge-servers/immunity-monitoring/tree/master/tests/immunity2/sample_monitoring/__init__.py>`_.
+- `sample_monitoring/apps.py <https://github.com/edge-servers/immunity-monitoring/tree/master/tests/immunity2/sample_monitoring/apps.py>`_.
+- `sample_device_monitoring/__init__.py <https://github.com/edge-servers/immunity-monitoring/tree/master/tests/immunity2/sample_device_monitoring/__init__.py>`_.
+- `sample_device_monitoring/apps.py <https://github.com/edge-servers/immunity-monitoring/tree/master/tests/immunity2/sample_device_monitoring/apps.py>`_.
 
 For more information regarding the concept of ``AppConfig`` please refer to
 the `"Applications" section in the django documentation <https://docs.djangoproject.com/en/dev/ref/applications/>`_.
@@ -2983,11 +2983,11 @@ the `"Applications" section in the django documentation <https://docs.djangoproj
 7. Create your custom models
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To extend ``check`` app, refer to `sample_check models.py file <https://github.com/openwisp/openwisp-monitoring/tree/master/tests/openwisp2/sample_check/models.py>`_.
+To extend ``check`` app, refer to `sample_check models.py file <https://github.com/edge-servers/immunity-monitoring/tree/master/tests/immunity2/sample_check/models.py>`_.
 
-To extend ``monitoring`` app, refer to `sample_monitoring models.py file <https://github.com/openwisp/openwisp-monitoring/tree/master/tests/openwisp2/sample_monitoring/models.py>`_.
+To extend ``monitoring`` app, refer to `sample_monitoring models.py file <https://github.com/edge-servers/immunity-monitoring/tree/master/tests/immunity2/sample_monitoring/models.py>`_.
 
-To extend ``device_monitoring`` app, refer to `sample_device_monitoring models.py file <https://github.com/openwisp/openwisp-monitoring/tree/master/tests/openwisp2/sample_device_monitoring/models.py>`_.
+To extend ``device_monitoring`` app, refer to `sample_device_monitoring models.py file <https://github.com/edge-servers/immunity-monitoring/tree/master/tests/immunity2/sample_device_monitoring/models.py>`_.
 
 **Note**:
 
@@ -3032,11 +3032,11 @@ For more information, refer to the
 10. Create your custom admin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To extend ``check`` app, refer to `sample_check admin.py file <https://github.com/openwisp/openwisp-monitoring/tree/master/tests/openwisp2/sample_check/admin.py>`_.
+To extend ``check`` app, refer to `sample_check admin.py file <https://github.com/edge-servers/immunity-monitoring/tree/master/tests/immunity2/sample_check/admin.py>`_.
 
-To extend ``monitoring`` app, refer to `sample_monitoring admin.py file <https://github.com/openwisp/openwisp-monitoring/tree/master/tests/openwisp2/sample_monitoring/admin.py>`_.
+To extend ``monitoring`` app, refer to `sample_monitoring admin.py file <https://github.com/edge-servers/immunity-monitoring/tree/master/tests/immunity2/sample_monitoring/admin.py>`_.
 
-To extend ``device_monitoring`` app, refer to `sample_device_monitoring admin.py file <https://github.com/openwisp/openwisp-monitoring/tree/master/tests/openwisp2/sample_device_monitoring/admin.py>`_.
+To extend ``device_monitoring`` app, refer to `sample_device_monitoring admin.py file <https://github.com/edge-servers/immunity-monitoring/tree/master/tests/immunity2/sample_device_monitoring/admin.py>`_.
 
 To introduce changes to the admin, you can do it in the two ways described below.
 
@@ -3052,7 +3052,7 @@ For example, for ``check`` app you can do it as:
 
 .. code-block:: python
 
-    from openwisp_monitoring.check.admin import CheckAdmin
+    from immunity_monitoring.check.admin import CheckAdmin
 
     CheckAdmin.list_display.insert(1, 'my_custom_field')
     CheckAdmin.ordering = ['-my_custom_field']
@@ -3061,7 +3061,7 @@ Similarly for ``device_monitoring`` app, you can do it as:
 
 .. code-block:: python
 
-    from openwisp_monitoring.device.admin import DeviceAdmin, WifiSessionAdmin
+    from immunity_monitoring.device.admin import DeviceAdmin, WifiSessionAdmin
 
     DeviceAdmin.list_display.insert(1, 'my_custom_field')
     DeviceAdmin.ordering = ['-my_custom_field']
@@ -3071,7 +3071,7 @@ Similarly for ``monitoring`` app, you can do it as:
 
 .. code-block:: python
 
-    from openwisp_monitoring.monitoring.admin import MetricAdmin, AlertSettingsAdmin
+    from immunity_monitoring.monitoring.admin import MetricAdmin, AlertSettingsAdmin
 
     MetricAdmin.list_display.insert(1, 'my_custom_field')
     MetricAdmin.ordering = ['-my_custom_field']
@@ -3090,7 +3090,7 @@ For ``check`` app,
 
     from django.contrib import admin
 
-    from openwisp_monitoring.check.admin import CheckAdmin as BaseCheckAdmin
+    from immunity_monitoring.check.admin import CheckAdmin as BaseCheckAdmin
     from swapper import load_model
 
     Check = load_model('check', 'Check')
@@ -3107,8 +3107,8 @@ For ``device_monitoring`` app,
 
     from django.contrib import admin
 
-    from openwisp_monitoring.device_monitoring.admin import DeviceAdmin as BaseDeviceAdmin
-    from openwisp_monitoring.device_monitoring.admin import WifiSessionAdmin as BaseWifiSessionAdmin
+    from immunity_monitoring.device_monitoring.admin import DeviceAdmin as BaseDeviceAdmin
+    from immunity_monitoring.device_monitoring.admin import WifiSessionAdmin as BaseWifiSessionAdmin
     from swapper import load_model
 
     Device = load_model('config', 'Device')
@@ -3131,7 +3131,7 @@ For ``monitoring`` app,
 
     from django.contrib import admin
 
-    from openwisp_monitoring.monitoring.admin import (
+    from immunity_monitoring.monitoring.admin import (
         AlertSettingsAdmin as BaseAlertSettingsAdmin,
         MetricAdmin as BaseMetricAdmin
     )
@@ -3154,7 +3154,7 @@ For ``monitoring`` app,
 11. Create root URL configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Please refer to the `urls.py <https://github.com/openwisp/openwisp-monitoring/tree/master/tests/openwisp2/urls.py>`_
+Please refer to the `urls.py <https://github.com/edge-servers/immunity-monitoring/tree/master/tests/immunity2/urls.py>`_
 file in the test project.
 
 For more information about URL configuration in django, please refer to the
@@ -3163,7 +3163,7 @@ For more information about URL configuration in django, please refer to the
 12. Create celery.py
 ~~~~~~~~~~~~~~~~~~~~
 
-Please refer to the `celery.py <https://github.com/openwisp/openwisp-monitoring/tree/master/tests/openwisp2/celery.py>`_
+Please refer to the `celery.py <https://github.com/edge-servers/immunity-monitoring/tree/master/tests/immunity2/celery.py>`_
 file in the test project.
 
 For more information about the usage of celery in django, please refer to the
@@ -3176,12 +3176,12 @@ Add the following in your settings.py to import celery tasks from ``device_monit
 
 .. code-block:: python
 
-    CELERY_IMPORTS = ('openwisp_monitoring.device.tasks',)
+    CELERY_IMPORTS = ('immunity_monitoring.device.tasks',)
 
 14. Create the custom command ``run_checks``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Please refer to the `run_checks.py <https://github.com/openwisp/openwisp-monitoring/tree/master/tests/openwisp2/sample_check/management/commands/run_checks.py>`_
+Please refer to the `run_checks.py <https://github.com/edge-servers/immunity-monitoring/tree/master/tests/immunity2/sample_check/management/commands/run_checks.py>`_
 file in the test project.
 
 For more information about the usage of custom management commands in django, please refer to the
@@ -3192,18 +3192,18 @@ For more information about the usage of custom management commands in django, pl
 
 When developing a custom application based on this module, it's a good idea
 to import and run the base tests too, so that you can be sure the changes you're introducing
-are not breaking some of the existing features of openwisp-monitoring.
+are not breaking some of the existing features of immunity-monitoring.
 
 In case you need to add breaking changes, you can overwrite the tests defined
 in the base classes to test your own behavior.
 
-For, extending ``check`` app see the `tests of sample_check app <https://github.com/openwisp/openwisp-monitoring/blob/master/tests/openwisp2/sample_check/tests.py>`_
+For, extending ``check`` app see the `tests of sample_check app <https://github.com/edge-servers/immunity-monitoring/blob/master/tests/immunity2/sample_check/tests.py>`_
 to find out how to do this.
 
-For, extending ``device_monitoring`` app see the `tests of sample_device_monitoring app <https://github.com/openwisp/openwisp-monitoring/blob/master/tests/openwisp2/sample_device_monitoring/tests.py>`_
+For, extending ``device_monitoring`` app see the `tests of sample_device_monitoring app <https://github.com/edge-servers/immunity-monitoring/blob/master/tests/immunity2/sample_device_monitoring/tests.py>`_
 to find out how to do this.
 
-For, extending ``monitoring`` app see the `tests of sample_monitoring app <https://github.com/openwisp/openwisp-monitoring/blob/master/tests/openwisp2/sample_monitoring/tests.py>`_
+For, extending ``monitoring`` app see the `tests of sample_monitoring app <https://github.com/edge-servers/immunity-monitoring/blob/master/tests/immunity2/sample_monitoring/tests.py>`_
 to find out how to do this.
 
 Other base classes that can be inherited and extended
@@ -3216,7 +3216,7 @@ Other base classes that can be inherited and extended
 
 This view is responsible for displaying ``Charts`` and ``Status`` primarily.
 
-The full python path is: ``openwisp_monitoring.device.api.views.DeviceMetricView``.
+The full python path is: ``immunity_monitoring.device.api.views.DeviceMetricView``.
 
 If you want to extend this view, you will have to perform the additional steps below.
 
@@ -3225,7 +3225,7 @@ Step 1. Import and extend view:
 .. code-block:: python
 
     # mydevice/api/views.py
-    from openwisp_monitoring.device.api.views import (
+    from immunity_monitoring.device.api.views import (
         DeviceMetricView as BaseDeviceMetricView
     )
 
@@ -3258,4 +3258,4 @@ Step 3: add an URL route pointing to your custom view in ``urls.py`` file:
 Contributing
 ------------
 
-Please refer to the `OpenWISP contributing guidelines <http://openwisp.io/docs/developer/contributing.html>`_.
+Please refer to the `Immunity contributing guidelines <http://immunity.io/docs/developer/contributing.html>`_.

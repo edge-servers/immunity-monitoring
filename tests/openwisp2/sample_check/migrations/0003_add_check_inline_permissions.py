@@ -2,7 +2,7 @@
 
 from django.db import migrations
 
-from openwisp_monitoring.check.migrations import (
+from immunity_monitoring.check.migrations import (
     assign_check_inline_permissions_to_groups,
 )
 

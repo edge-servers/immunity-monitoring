@@ -1,16 +1,16 @@
-from openwisp_monitoring.monitoring.tests.test_charts import (
+from immunity_monitoring.monitoring.tests.test_charts import (
     TestCharts as BaseTestCharts,
 )
-from openwisp_monitoring.monitoring.tests.test_db_creation import (
+from immunity_monitoring.monitoring.tests.test_db_creation import (
     TestDatabase as BaseTestDatabase,
 )
-from openwisp_monitoring.monitoring.tests.test_models import (
+from immunity_monitoring.monitoring.tests.test_models import (
     TestModels as BaseTestModels,
 )
-from openwisp_monitoring.monitoring.tests.test_monitoring_notifications import (
+from immunity_monitoring.monitoring.tests.test_monitoring_notifications import (
     TestMonitoringNotifications as BaseTestMonitoringNotifications,
 )
-from openwisp_monitoring.monitoring.tests.test_monitoring_notifications import (
+from immunity_monitoring.monitoring.tests.test_monitoring_notifications import (
     TestTransactionMonitoringNotifications as BaseTestTransactionMonitoringNotifications,
 )
 

@@ -1,5 +1,5 @@
 ---
-name: OpenWISP Monitoring CI Build
+name: Immunity Monitoring CI Build
 
 on:
   push:
@@ -71,7 +71,7 @@ jobs:
         run: |
           pip install -r requirements-test.txt
 
-      - name: Install openwisp-monitoring
+      - name: Install immunity-monitoring
         run: |
           pip install -U -I -e .
           pip uninstall -y django
@@ -83,9 +83,9 @@ jobs:
 
       - name: Tests
         run: |
-          SAMPLE_APP=1 coverage run --source=openwisp_monitoring runtests.py
-          coverage run -a --source=openwisp_monitoring runtests.py
-          TIMESERIES_UDP=1 coverage run -a --source=openwisp_monitoring runtests.py
+          SAMPLE_APP=1 coverage run --source=immunity_monitoring runtests.py
+          coverage run -a --source=immunity_monitoring runtests.py
+          TIMESERIES_UDP=1 coverage run -a --source=immunity_monitoring runtests.py
           coverage xml
 
       - name: Upload Coverage
@@ -109,8 +109,8 @@ jobs:
       - name: Push to Docker
         run: |
           echo "${{ secrets.DOCKER_TOKEN }}" | docker login --username ${{ secrets.DOCKER_USERNAME }} --password-stdin
-          docker build . -t openwisp/openwisp-monitoring:develop
-          docker push openwisp/openwisp-monitoring:develop
+          docker build . -t immunity/immunity-monitoring:develop
+          docker push immunity/immunity-monitoring:develop
 
   coveralls:
     needs: build
