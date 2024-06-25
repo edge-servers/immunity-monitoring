@@ -718,7 +718,8 @@ def get_metric_configuration():
     for metric_name in list(additional_metrics.keys()):
         if additional_metrics[metric_name].get('partial', False):
             # A partial configuration can be defined in the settings.py
-            # with OPENWISP_MONITORING_METRICS setting to override
+            # with IMMUNITY
+_MONITORING_METRICS setting to override
             # metrics that are added with register_metric method in
             # other django apps.
             # Since, the partial configuration could be defined to
@@ -758,7 +759,8 @@ def register_metric(metric_name, metric_config):
         # There is partial configuration present for this "metric_name" in
         # ADDITIONAL_METRICS. We need to merge the partial configuration with
         # the registered metric before validating. Otherwise, users won't be
-        # able to override registered metrics using OPENWISP_MONITORING_METRICS
+        # able to override registered metrics using IMMUNITY
+_MONITORING_METRICS
         # setting.
         metric_config = deep_merge_dicts(
             metric_config,

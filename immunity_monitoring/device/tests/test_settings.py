@@ -11,7 +11,8 @@ class TestSettings(DeviceMonitoringTestCase):
     """
 
     @patch(
-        'django.conf.settings.OPENWISP_MONITORING_CRITICAL_DEVICE_METRICS',
+        'django.conf.settings.IMMUNITY
+_MONITORING_CRITICAL_DEVICE_METRICS',
         [{}],
         create=True,
     )
@@ -22,7 +23,8 @@ class TestSettings(DeviceMonitoringTestCase):
             get_critical_device_metrics()
 
     @patch(
-        'django.conf.settings.OPENWISP_MONITORING_HEALTH_STATUS_LABELS', {}, create=True
+        'django.conf.settings.IMMUNITY
+_MONITORING_HEALTH_STATUS_LABELS', {}, create=True
     )
     def test_invalid_health_status_setting(self):
         with self.assertRaises(ImproperlyConfigured):

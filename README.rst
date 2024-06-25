@@ -540,7 +540,8 @@ on the LAN address, Immunity can then use the **Last IP** field of the
 devices to reach them.
 
 In this scenario it's necessary to set the
-`"OPENWISP_MONITORING_MANAGEMENT_IP_ONLY" <#immunity-monitoring-management-ip-only>`_
+`"IMMUNITY
+_MONITORING_MANAGEMENT_IP_ONLY" <#immunity-monitoring-management-ip-only>`_
 setting to ``False``.
 
 Creating checks for a device
@@ -602,7 +603,8 @@ Example: CPU usage should be less than 90% but current value is at 95%.
 ``CRITICAL``
 ~~~~~~~~~~~~
 
-One of the metrics defined in ``OPENWISP_MONITORING_CRITICAL_DEVICE_METRICS``
+One of the metrics defined in ``IMMUNITY
+_MONITORING_CRITICAL_DEVICE_METRICS``
 has a value which is not in the expected range
 (the threshold value set in the alert settings has been crossed).
 
@@ -890,7 +892,8 @@ Immunity Monitoring adds two timeseries charts to the admin dashboard:
 - **General traffic Chart**: Shows the amount of traffic flowing in the network.
 
 You can configure the interfaces included in the **General traffic chart** using
-the `"OPENWISP_MONITORING_DASHBOARD_TRAFFIC_CHART"
+the `"IMMUNITY
+_MONITORING_DASHBOARD_TRAFFIC_CHART"
 <#immunity_monitoring_dashboard_traffic_chart>`_ setting.
 
 Adaptive size charts
@@ -941,7 +944,8 @@ are connected to or even directly by a *device* name or ID.
   :align: center
 
 You can disable this feature by configuring
-`OPENWISP_MONITORING_WIFI_SESSIONS_ENABLED <#immunity_monitoring_wifi_sessions_enabled>`_
+`IMMUNITY
+_MONITORING_WIFI_SESSIONS_ENABLED <#immunity_monitoring_wifi_sessions_enabled>`_
 setting.
 
 You can also view open WiFi sessions of a device directly from the device's change admin
@@ -1005,10 +1009,14 @@ This check returns information on device ``uptime`` and ``RTT (Round trip time)`
 The Charts ``uptime``, ``packet loss`` and ``rtt`` are created. The ``fping``
 command is used to collect these metrics.
 You may choose to disable auto creation of this check by setting
-`OPENWISP_MONITORING_AUTO_PING <#OPENWISP_MONITORING_AUTO_PING>`_ to ``False``.
+`IMMUNITY
+_MONITORING_AUTO_PING <#IMMUNITY
+_MONITORING_AUTO_PING>`_ to ``False``.
 
 You can change the default values used for ping checks using
-`OPENWISP_MONITORING_PING_CHECK_CONFIG <#OPENWISP_MONITORING_PING_CHECK_CONFIG>`_ setting.
+`IMMUNITY
+_MONITORING_PING_CHECK_CONFIG <#IMMUNITY
+_MONITORING_PING_CHECK_CONFIG>`_ setting.
 
 Configuration applied
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1016,7 +1024,9 @@ Configuration applied
 This check ensures that the `immunity-config agent <https://github.com/edge-servers/immunity-config/>`_
 is running and applying configuration changes in a timely manner.
 You may choose to disable auto creation of this check by using the
-setting `OPENWISP_MONITORING_AUTO_DEVICE_CONFIG_CHECK <#OPENWISP_MONITORING_AUTO_DEVICE_CONFIG_CHECK>`_.
+setting `IMMUNITY
+_MONITORING_AUTO_DEVICE_CONFIG_CHECK <#IMMUNITY
+_MONITORING_AUTO_DEVICE_CONFIG_CHECK>`_.
 
 This check runs periodically, but it is also triggered whenever the
 configuration status of a device changes, this ensures the check reacts
@@ -1030,7 +1040,9 @@ This check provides network performance measurements such as maximum achievable 
 jitter, datagram loss etc of the device using `iperf3 utility <https://iperf.fr/>`_.
 
 This check is **disabled by default**. You can enable auto creation of this check by setting the
-`OPENWISP_MONITORING_AUTO_IPERF3 <#OPENWISP_MONITORING_AUTO_IPERF3>`_ to ``True``.
+`IMMUNITY
+_MONITORING_AUTO_IPERF3 <#IMMUNITY
+_MONITORING_AUTO_IPERF3>`_ to ``True``.
 
 You can also `add the iperf3 check
 <#add-checks-and-alert-settings-from-the-device-page>`_ directly from the device page.
@@ -1038,10 +1050,14 @@ You can also `add the iperf3 check
 It also supports tuning of various parameters.
 
 You can also change the parameters used for iperf3 checks (e.g. timing, port, username,
-password, rsa_publc_key etc) using the `OPENWISP_MONITORING_IPERF3_CHECK_CONFIG
-<#OPENWISP_MONITORING_IPERF3_CHECK_CONFIG>`_ setting.
+password, rsa_publc_key etc) using the `IMMUNITY
+_MONITORING_IPERF3_CHECK_CONFIG
+<#IMMUNITY
+_MONITORING_IPERF3_CHECK_CONFIG>`_ setting.
 
-**Note:** When setting `OPENWISP_MONITORING_AUTO_IPERF3 <#OPENWISP_MONITORING_AUTO_IPERF3>`_  to ``True``,
+**Note:** When setting `IMMUNITY
+_MONITORING_AUTO_IPERF3 <#IMMUNITY
+_MONITORING_AUTO_IPERF3>`_  to ``True``,
 you may need to update the `metric configuration <#add-checks-and-alert-settings-from-the-device-page>`_
 to enable alerts for the iperf3 check.
 
@@ -1088,7 +1104,8 @@ Example:
 
 .. code-block:: python
 
-   OPENWISP_MONITORING_IPERF3_CHECK_CONFIG = {
+   IMMUNITY
+_MONITORING_IPERF3_CHECK_CONFIG = {
        # 'org_pk' : {'host' : [], 'client_options' : {}}
        'a9734710-db30-46b0-a2fc-01f01046fe4f': {
            # Some public iperf3 servers
@@ -1213,7 +1230,8 @@ Currently, iperf3 check supports the following parameters:
 +-----------------------+-------------------------------------------------------------------------------+
 
 To learn how to use these parameters, please see the
-`iperf3 check configuration example <#OPENWISP_MONITORING_IPERF3_CHECK_CONFIG>`_.
+`iperf3 check configuration example <#IMMUNITY
+_MONITORING_IPERF3_CHECK_CONFIG>`_.
 
 Visit the `official documentation <https://www.mankier.com/1/iperf3>`_
 to learn more about the iperf3 parameters.
@@ -1240,8 +1258,10 @@ Server side
 
 After running the commands mentioned above, the public key will be stored in
 ``public_key.pem`` which will be used in **rsa_public_key** parameter
-in `OPENWISP_MONITORING_IPERF3_CHECK_CONFIG
-<#OPENWISP_MONITORING_IPERF3_CHECK_CONFIG>`_
+in `IMMUNITY
+_MONITORING_IPERF3_CHECK_CONFIG
+<#IMMUNITY
+_MONITORING_IPERF3_CHECK_CONFIG>`_
 and the private key will be contained in the file ``private_key.pem``
 which will be used with **--rsa-private-key-path** command option when
 starting the iperf3 server.
@@ -1296,13 +1316,16 @@ You may also check your installed **iperf3 openwrt package** features:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now, add the following iperf3 authentication parameters
-to `OPENWISP_MONITORING_IPERF3_CHECK_CONFIG
-<#OPENWISP_MONITORING_IPERF3_CHECK_CONFIG>`_
+to `IMMUNITY
+_MONITORING_IPERF3_CHECK_CONFIG
+<#IMMUNITY
+_MONITORING_IPERF3_CHECK_CONFIG>`_
 in the settings:
 
 .. code-block:: python
 
-   OPENWISP_MONITORING_IPERF3_CHECK_CONFIG = {
+   IMMUNITY
+_MONITORING_IPERF3_CHECK_CONFIG = {
        'a9734710-db30-46b0-a2fc-01f01046fe4f': {
            'host': ['iperf1.immunity.io', 'iperf2.immunity.io', '192.168.5.2'],
            # All three parameters (username, password, rsa_publc_key)
@@ -1341,7 +1364,8 @@ To add a check, you just need to select an available **check type** as shown bel
   :align: center
 
 The following example shows how to use the
-`OPENWISP_MONITORING_METRICS setting <#immunity_monitoring_metrics>`_
+`IMMUNITY
+_MONITORING_METRICS setting <#immunity_monitoring_metrics>`_
 to reconfigure the system for `iperf3 check <#iperf3-1>`_ to send an alert if
 the measured **TCP bandwidth** has been less than **10 Mbit/s** for more than **2 days**.
 
@@ -1358,7 +1382,8 @@ but it is easy to customize alert settings through the device page as shown belo
    # Main project settings.py
    from django.utils.translation import gettext_lazy as _
 
-   OPENWISP_MONITORING_METRICS = {
+   IMMUNITY
+_MONITORING_METRICS = {
        'iperf3': {
            'notification': {
                'problem': {
@@ -1485,7 +1510,8 @@ in your playbook, this will make the ansible role automatically configure the In
 You can refer to the `ansible-ow-influxdb's <https://github.com/edge-servers/ansible-ow-influxdb#role-variables>`_
 (a dependency of ansible-immunity2) documentation to learn more.
 
-``OPENWISP_MONITORING_DEFAULT_RETENTION_POLICY``
+``IMMUNITY
+_MONITORING_DEFAULT_RETENTION_POLICY``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+--------------------------+
@@ -1496,7 +1522,8 @@ You can refer to the `ansible-ow-influxdb's <https://github.com/edge-servers/ans
 
 The default retention policy that applies to the timeseries data.
 
-``OPENWISP_MONITORING_SHORT_RETENTION_POLICY``
+``IMMUNITY
+_MONITORING_SHORT_RETENTION_POLICY``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------+
@@ -1511,7 +1538,8 @@ This data is only used to assess the recent status of devices, keeping
 it for a long time would not add much benefit and would cost a lot more
 in terms of disk space.
 
-``OPENWISP_MONITORING_AUTO_PING``
+``IMMUNITY
+_MONITORING_AUTO_PING``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------+
@@ -1522,7 +1550,8 @@ in terms of disk space.
 
 Whether ping checks are created automatically for devices.
 
-``OPENWISP_MONITORING_PING_CHECK_CONFIG``
+``IMMUNITY
+_MONITORING_PING_CHECK_CONFIG``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------+
@@ -1539,7 +1568,8 @@ For example, if you want to change only the **timeout** of
 
 .. code-block:: python
 
-    OPENWISP_MONITORING_PING_CHECK_CONFIG = {
+    IMMUNITY
+_MONITORING_PING_CHECK_CONFIG = {
         'timeout': {
             'default': 1000,
         },
@@ -1553,7 +1583,8 @@ as following:
 
 .. code-block:: python
 
-    OPENWISP_MONITORING_PING_CHECK_CONFIG = {
+    IMMUNITY
+_MONITORING_PING_CHECK_CONFIG = {
         'timeout': {
             'default': 2000,
             'minimum': 1500,
@@ -1564,7 +1595,8 @@ as following:
 **Note:** Above ``maximum`` and ``minimum`` values are only used for
 validating custom parameters of a ``Check`` object.
 
-``OPENWISP_MONITORING_AUTO_DEVICE_CONFIG_CHECK``
+``IMMUNITY
+_MONITORING_AUTO_DEVICE_CONFIG_CHECK``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------+
@@ -1576,7 +1608,8 @@ validating custom parameters of a ``Check`` object.
 This setting allows you to choose whether `config_applied <#configuration-applied>`_ checks should be
 created automatically for newly registered devices. It's enabled by default.
 
-``OPENWISP_MONITORING_CONFIG_CHECK_INTERVAL``
+``IMMUNITY
+_MONITORING_CONFIG_CHECK_INTERVAL``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------+
@@ -1588,7 +1621,8 @@ created automatically for newly registered devices. It's enabled by default.
 This setting allows you to configure the config check interval used by
 `config_applied <#configuration-applied>`_. By default it is set to 5 minutes.
 
-``OPENWISP_MONITORING_AUTO_IPERF3``
+``IMMUNITY
+_MONITORING_AUTO_IPERF3``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------+
@@ -1600,7 +1634,8 @@ This setting allows you to configure the config check interval used by
 This setting allows you to choose whether `iperf3 <#iperf3-1>`_ checks should be
 created automatically for newly registered devices. It's disabled by default.
 
-``OPENWISP_MONITORING_IPERF3_CHECK_CONFIG``
+``IMMUNITY
+_MONITORING_IPERF3_CHECK_CONFIG``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------+
@@ -1616,7 +1651,8 @@ For example, you can change the values of `supported iperf3 check parameters <#i
 
 .. code-block:: python
 
-   OPENWISP_MONITORING_IPERF3_CHECK_CONFIG = {
+   IMMUNITY
+_MONITORING_IPERF3_CHECK_CONFIG = {
        # 'org_pk' : {'host' : [], 'client_options' : {}}
        'a9734710-db30-46b0-a2fc-01f01046fe4f': {
            # Some public iperf3 servers
@@ -1647,7 +1683,8 @@ For example, you can change the values of `supported iperf3 check parameters <#i
        }
    }
 
-``OPENWISP_MONITORING_IPERF3_CHECK_DELETE_RSA_KEY``
+``IMMUNITY
+_MONITORING_IPERF3_CHECK_DELETE_RSA_KEY``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------------------------+
@@ -1660,7 +1697,8 @@ This setting allows you to set whether
 `iperf3 check RSA public key <#configure-iperf3-check-for-authentication>`_
 will be deleted after successful completion of the check or not.
 
-``OPENWISP_MONITORING_IPERF3_CHECK_LOCK_EXPIRE``
+``IMMUNITY
+_MONITORING_IPERF3_CHECK_LOCK_EXPIRE``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------------------------+
@@ -1673,7 +1711,8 @@ This setting allows you to set a cache lock expiration time for the iperf3 check
 running on multiple servers. Make sure it is always greater than the total iperf3 check
 time, i.e. greater than the TCP + UDP test time. By default, it is set to **600 seconds (10 mins)**.
 
-``OPENWISP_MONITORING_AUTO_CHARTS``
+``IMMUNITY
+_MONITORING_AUTO_CHARTS``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-----------------------------------------------------------------+
@@ -1684,7 +1723,8 @@ time, i.e. greater than the TCP + UDP test time. By default, it is set to **600 
 
 Automatically created charts.
 
-``OPENWISP_MONITORING_CRITICAL_DEVICE_METRICS``
+``IMMUNITY
+_MONITORING_CRITICAL_DEVICE_METRICS``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-----------------------------------------------------------------+
@@ -1701,7 +1741,8 @@ of the device related to the metric moves into ``CRITICAL``.
 
 By default, if devices are not reachable by pings they are flagged as ``CRITICAL``.
 
-``OPENWISP_MONITORING_HEALTH_STATUS_LABELS``
+``IMMUNITY
+_MONITORING_HEALTH_STATUS_LABELS``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+--------------------------------------------------------------------------------------+
@@ -1716,13 +1757,15 @@ you can use the following configuration:
 
 .. code-block:: python
 
-    OPENWISP_MONITORING_HEALTH_STATUS_LABELS = {
+    IMMUNITY
+_MONITORING_HEALTH_STATUS_LABELS = {
         'ok': 'online',
         'problem': 'problem',
         'critical': 'offline'
     }
 
-``OPENWISP_MONITORING_WIFI_SESSIONS_ENABLED``
+``IMMUNITY
+_MONITORING_WIFI_SESSIONS_ENABLED``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------+
@@ -1734,7 +1777,8 @@ you can use the following configuration:
 Setting this to ``False`` will disable `Monitoring Wifi Sessions <#monitoring-wifi-sessions>`_
 feature.
 
-``OPENWISP_MONITORING_MANAGEMENT_IP_ONLY``
+``IMMUNITY
+_MONITORING_MANAGEMENT_IP_ONLY``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------+
@@ -1751,12 +1795,15 @@ network, hence the OpenWSP server can reach the devices using the ``last_ip``
 field, you can set this to ``False``.
 
 **Note:** If this setting is not configured, it will fallback to the value of
-`OPENWISP_CONTROLLER_MANAGEMENT_IP_ONLY setting
+`IMMUNITY
+_CONTROLLER_MANAGEMENT_IP_ONLY setting
 <https://github.com/edge-servers/immunity-controller#immunity_controller_management_ip_only>`_.
-If ``OPENWISP_CONTROLLER_MANAGEMENT_IP_ONLY`` also not configured,
+If ``IMMUNITY
+_CONTROLLER_MANAGEMENT_IP_ONLY`` also not configured,
 then it will fallback to ``True``.
 
-``OPENWISP_MONITORING_DEVICE_RECOVERY_DETECTION``
+``IMMUNITY
+_MONITORING_DEVICE_RECOVERY_DETECTION``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------+
@@ -1778,7 +1825,8 @@ network topology module will trigger the monitoring checks.
 For more information see:
 `Network Topology Device Integration <https://github.com/edge-servers/immunity-network-topology#integration-with-immunity-controller-and-immunity-monitoring>`_
 
-``OPENWISP_MONITORING_MAC_VENDOR_DETECTION``
+``IMMUNITY
+_MONITORING_MAC_VENDOR_DETECTION``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------+
@@ -1793,7 +1841,8 @@ information by performing lookups on the OUI
 
 This feature is enabled by default.
 
-``OPENWISP_MONITORING_WRITE_RETRY_OPTIONS``
+``IMMUNITY
+_MONITORING_WRITE_RETRY_OPTIONS``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-----------+
@@ -1804,7 +1853,8 @@ This feature is enabled by default.
 
 .. code-block:: python
 
-    # default value of OPENWISP_MONITORING_RETRY_OPTIONS:
+    # default value of IMMUNITY
+_MONITORING_RETRY_OPTIONS:
 
     dict(
         max_retries=None,
@@ -1828,7 +1878,8 @@ regarding automatic retries for known errors
 data to the timeseries database. It is due to the nature of ``UDP`` protocol
 which does not acknowledge receipt of data packets.
 
-``OPENWISP_MONITORING_TIMESERIES_RETRY_OPTIONS``
+``IMMUNITY
+_MONITORING_TIMESERIES_RETRY_OPTIONS``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-----------+
@@ -1839,7 +1890,8 @@ which does not acknowledge receipt of data packets.
 
 .. code-block:: python
 
-    # default value of OPENWISP_MONITORING_RETRY_OPTIONS:
+    # default value of IMMUNITY
+_MONITORING_RETRY_OPTIONS:
 
     dict(
         max_retries=6,
@@ -1850,15 +1902,18 @@ On busy systems, communication with the timeseries DB can occasionally fail.
 The timeseries DB backend will retry on any exception according to these settings.
 The delay kicks in only after the third consecutive attempt.
 
-This setting shall not be confused with ``OPENWISP_MONITORING_WRITE_RETRY_OPTIONS``,
+This setting shall not be confused with ``IMMUNITY
+_MONITORING_WRITE_RETRY_OPTIONS``,
 which is used to configure the infinite retrying of the celery task which writes
-metric data to the timeseries DB, while ``OPENWISP_MONITORING_TIMESERIES_RETRY_OPTIONS``
+metric data to the timeseries DB, while ``IMMUNITY
+_MONITORING_TIMESERIES_RETRY_OPTIONS``
 deals with any other read/write operation on the timeseries DB which may fail.
 
 However these retries are not handled by celery but are simple python loops,
 which will eventually give up if a problem persists.
 
-``OPENWISP_MONITORING_TIMESERIES_RETRY_DELAY``
+``IMMUNITY
+_MONITORING_TIMESERIES_RETRY_DELAY``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------+
@@ -1873,7 +1928,8 @@ This retry setting is used in retry mechanism to make the requests to the timese
 
 This setting is independent of celery retry settings.
 
-``OPENWISP_MONITORING_DASHBOARD_MAP``
+``IMMUNITY
+_MONITORING_DASHBOARD_MAP``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------+
@@ -1889,14 +1945,16 @@ of the monitoring status of the devices, this allows to get
 an overview of the network at glance.
 
 This feature is enabled by default and depends on the setting
-``OPENWISP_ADMIN_DASHBOARD_ENABLED`` from
+``IMMUNITY
+_ADMIN_DASHBOARD_ENABLED`` from
 `immunity-utils <https://github.com/edge-servers/immunity-utils>`__
 being set to ``True`` (which is the default).
 
 You can turn this off if you do not use the geographic features
 of Immunity.
 
-``OPENWISP_MONITORING_DASHBOARD_TRAFFIC_CHART``
+``IMMUNITY
+_MONITORING_DASHBOARD_TRAFFIC_CHART``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+--------------------------------------------+
@@ -1912,7 +1970,8 @@ This setting should be defined in the following format:
 
 .. code-block::python
 
-    OPENWISP_MONITORING_DASHBOARD_TRAFFIC_CHART = {
+    IMMUNITY
+_MONITORING_DASHBOARD_TRAFFIC_CHART = {
         '<organization-uuid>': ['<list-of-interfaces>']
     }
 
@@ -1922,19 +1981,22 @@ as follows:
 
 .. code-block::python
 
-    OPENWISP_MONITORING_DASHBOARD_TRAFFIC_CHART = {
+    IMMUNITY
+_MONITORING_DASHBOARD_TRAFFIC_CHART = {
         # organization uuid
         'f9601bbd-b6d5-4704-85e3-5851894437bf': ['eth1', 'eth2']
     }
 
 **Note**: The value of ``__all__`` key is used if an organization
-does not have list of interfaces defined in ``OPENWISP_MONITORING_DASHBOARD_TRAFFIC_CHART``.
+does not have list of interfaces defined in ``IMMUNITY
+_MONITORING_DASHBOARD_TRAFFIC_CHART``.
 
 **Note**: If a user can manage more than one organization (e.g. superusers),
 then the **General Traffic** chart will always show data from interfaces
 of ``__all__`` configuration.
 
-``OPENWISP_MONITORING_METRICS``
+``IMMUNITY
+_MONITORING_METRICS``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------+
@@ -1954,7 +2016,8 @@ For example, if you want to change only the **field_name** of
 
     from django.utils.translation import gettext_lazy as _
 
-    OPENWISP_MONITORING_METRICS = {
+    IMMUNITY
+_MONITORING_METRICS = {
         'clients': {
             'label': _('WiFi clients'),
             'field_name': 'wifi_clients',
@@ -1966,7 +2029,8 @@ For example, if you want to change only the default alert settings of
 
 .. code-block:: python
 
-    OPENWISP_MONITORING_METRICS = {
+    IMMUNITY
+_MONITORING_METRICS = {
         'memory': {
             'alert_settings': {'threshold': 75, 'tolerance': 10}
         },
@@ -1979,7 +2043,8 @@ For example, if you want to change only the notification of
 
     from django.utils.translation import gettext_lazy as _
 
-    OPENWISP_MONITORING_METRICS = {
+    IMMUNITY
+_MONITORING_METRICS = {
         'config_applied': {
             'notification': {
                 'problem': {
@@ -2017,7 +2082,8 @@ call in your custom code (eg: a custom check class), you can do so as follows:
 
     from django.utils.translation import gettext_lazy as _
 
-    OPENWISP_MONITORING_METRICS = {
+    IMMUNITY
+_MONITORING_METRICS = {
         'top_fields_mean': {
             'name': 'Top Fields Mean',
             'key': '{key}',
@@ -2027,7 +2093,8 @@ call in your custom code (eg: a custom check class), you can do so as follows:
         },
     }
 
-``OPENWISP_MONITORING_CHARTS``
+``IMMUNITY
+_MONITORING_CHARTS``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------+
@@ -2044,7 +2111,8 @@ In the following example, we modify the description of the traffic chart:
 
 .. code-block:: python
 
-    OPENWISP_MONITORING_CHARTS = {
+    IMMUNITY
+_MONITORING_CHARTS = {
         'traffic': {
             'description': (
                 'Network traffic, download and upload, measured on '
@@ -2060,7 +2128,8 @@ call in your custom code (eg: a custom check class), you can do so as follows:
 
     from django.utils.translation import gettext_lazy as _
 
-    OPENWISP_MONITORING_CHARTS = {
+    IMMUNITY
+_MONITORING_CHARTS = {
         'ram': {
             'type': 'line',
             'title': 'RAM usage',
@@ -2082,13 +2151,15 @@ In case you just want to change the colors used in a chart here's how to do it:
 
 .. code-block:: python
 
-    OPENWISP_MONITORING_CHARTS = {
+    IMMUNITY
+_MONITORING_CHARTS = {
         'traffic': {
             'colors': ['#000000', '#cccccc', '#111111']
         }
     }
 
-``OPENWISP_MONITORING_DEFAULT_CHART_TIME``
+``IMMUNITY
+_MONITORING_DEFAULT_CHART_TIME``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------+---------------------------------------------+
@@ -2101,7 +2172,8 @@ In case you just want to change the colors used in a chart here's how to do it:
 
 Allows to set the default time period of the time series charts.
 
-``OPENWISP_MONITORING_AUTO_CLEAR_MANAGEMENT_IP``
+``IMMUNITY
+_MONITORING_AUTO_CLEAR_MANAGEMENT_IP``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------+
@@ -2113,7 +2185,8 @@ Allows to set the default time period of the time series charts.
 This setting allows you to automatically clear management_ip of a device
 when it goes offline. It is enabled by default.
 
-``OPENWISP_MONITORING_API_URLCONF``
+``IMMUNITY
+_MONITORING_API_URLCONF``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------+
@@ -2126,7 +2199,8 @@ Changes the urlconf option of django urls to point the monitoring API
 urls to another installed module, example, ``myapp.urls``.
 (Useful when you have a seperate API instance.)
 
-``OPENWISP_MONITORING_API_BASEURL``
+``IMMUNITY
+_MONITORING_API_BASEURL``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------+
@@ -2140,7 +2214,8 @@ domain, you can use this option to change the base of the url, this will
 enable you to point all the API urls to your immunity-monitoring API server's
 domain, example: ``https://mymonitoring.myapp.com``.
 
-``OPENWISP_MONITORING_CACHE_TIMEOUT``
+``IMMUNITY
+_MONITORING_CACHE_TIMEOUT``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+----------------------------------+
@@ -2296,7 +2371,8 @@ which allows ``AlertSettings`` to check the ``threshold`` on
 is already registered with same name (not to be confused with verbose_name).
 
 If you don't need to register a new metric but need to change a specific key of an
-existing metric configuration, you can use `OPENWISP_MONITORING_METRICS <#immunity_monitoring_metrics>`_.
+existing metric configuration, you can use `IMMUNITY
+_MONITORING_METRICS <#immunity_monitoring_metrics>`_.
 
 ``unregister_metric``
 ~~~~~~~~~~~~~~~~~~~~~
@@ -2370,7 +2446,8 @@ An example usage has been shown below.
 is already registered with same name (not to be confused with verbose_name).
 
 If you don't need to register a new chart but need to change a specific key of an
-existing chart configuration, you can use `OPENWISP_MONITORING_CHARTS <#immunity_monitoring_charts>`_.
+existing chart configuration, you can use `IMMUNITY
+_MONITORING_CHARTS <#immunity_monitoring_charts>`_.
 
 ``unregister_chart``
 ~~~~~~~~~~~~~~~~~~~~
@@ -2418,7 +2495,8 @@ If there is any failure due while writing data in timeseries database, this exce
 be raised with a helpful error message explaining the cause of the failure.
 This exception will normally be caught and the failed write task will be retried in the background
 so that there is no loss of data if failures occur due to overload of Timeseries server.
-You can read more about this retry mechanism at `OPENWISP_MONITORING_WRITE_RETRY_OPTIONS <#immunity-monitoring-write-retry-options>`_.
+You can read more about this retry mechanism at `IMMUNITY
+_MONITORING_WRITE_RETRY_OPTIONS <#immunity-monitoring-write-retry-options>`_.
 
 ``InvalidMetricConfigException``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

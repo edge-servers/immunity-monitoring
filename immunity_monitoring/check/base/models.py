@@ -113,7 +113,8 @@ class AbstractCheck(TimeStampedEditableModel):
 
 def auto_ping_receiver(sender, instance, created, **kwargs):
     """
-    Implements OPENWISP_MONITORING_AUTO_PING
+    Implements IMMUNITY
+_MONITORING_AUTO_PING
     The creation step is executed in the background
     """
     # we need to skip this otherwise this task will be executed
@@ -131,7 +132,8 @@ def auto_ping_receiver(sender, instance, created, **kwargs):
 
 def auto_config_check_receiver(sender, instance, created, **kwargs):
     """
-    Implements OPENWISP_MONITORING_AUTO_DEVICE_CONFIG_CHECK
+    Implements IMMUNITY
+_MONITORING_AUTO_DEVICE_CONFIG_CHECK
     The creation step is executed in the background
     """
     # we need to skip this otherwise this task will be executed
@@ -149,7 +151,8 @@ def auto_config_check_receiver(sender, instance, created, **kwargs):
 
 def auto_iperf3_check_receiver(sender, instance, created, **kwargs):
     """
-    Implements OPENWISP_MONITORING_AUTO_IPERF3
+    Implements IMMUNITY
+_MONITORING_AUTO_IPERF3
     The creation step is executed in the background
     """
     # we need to skip this otherwise this task will be executed

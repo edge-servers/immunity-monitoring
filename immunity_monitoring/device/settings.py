@@ -14,7 +14,8 @@ def get_critical_device_metrics():
             assert 'field_name' in item
         except AssertionError as e:
             raise ImproperlyConfigured(
-                'OPENWISP_MONITORING_CRITICAL_DEVICE_METRICS must contain the following keys: key, field_name'
+                'IMMUNITY
+_MONITORING_CRITICAL_DEVICE_METRICS must contain the following keys: key, field_name'
             ) from e
     return critical_metrics
 
@@ -36,7 +37,8 @@ def get_health_status_labels():
         assert 'critical' in labels
     except AssertionError as e:  # pragma: no cover
         raise ImproperlyConfigured(
-            'OPENWISP_MONITORING_HEALTH_STATUS_LABELS must contain the following '
+            'IMMUNITY
+_MONITORING_HEALTH_STATUS_LABELS must contain the following '
             'keys: unknown, ok, problem, critical'
         ) from e
     return labels

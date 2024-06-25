@@ -151,7 +151,8 @@ ACCOUNT_LOGOUT_REDIRECT_URL = LOGIN_REDIRECT_URL
 # during development only
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-OPENWISP_MONITORING_MANAGEMENT_IP_ONLY = False
+IMMUNITY
+_MONITORING_MANAGEMENT_IP_ONLY = False
 
 redis_host = os.getenv('REDIS_HOST', 'localhost')
 CACHES = {
@@ -216,11 +217,15 @@ else:
 
 # avoid slowing down the test suite with mac vendor lookups
 if TESTING:
-    OPENWISP_MONITORING_MAC_VENDOR_DETECTION = False
-    OPENWISP_MONITORING_API_URLCONF = 'immunity_monitoring.urls'
-    OPENWISP_MONITORING_API_BASEURL = 'http://testserver'
+    IMMUNITY
+_MONITORING_MAC_VENDOR_DETECTION = False
+    IMMUNITY
+_MONITORING_API_URLCONF = 'immunity_monitoring.urls'
+    IMMUNITY
+_MONITORING_API_BASEURL = 'http://testserver'
     # for testing AUTO_IPERF3
-    OPENWISP_MONITORING_AUTO_IPERF3 = True
+    IMMUNITY
+_MONITORING_AUTO_IPERF3 = True
 
 # Temporarily added to identify slow tests
 TEST_RUNNER = 'immunity_utils.tests.TimeLoggingTestRunner'

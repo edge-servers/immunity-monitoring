@@ -285,7 +285,8 @@ class DeviceMonitoringConfig(AppConfig):
             transaction_on_commit(lambda: perform_check.delay(check.pk))
 
     def set_update_config_model(self):
-        if not getattr(settings, 'OPENWISP_UPDATE_CONFIG_MODEL', None):
+        if not getattr(settings, 'IMMUNITY
+_UPDATE_CONFIG_MODEL', None):
             setattr(
                 connection_settings,
                 'UPDATE_CONFIG_MODEL',

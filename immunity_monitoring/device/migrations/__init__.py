@@ -6,14 +6,16 @@ from immunity_controller.migrations import create_default_permissions, get_swapp
 
 # Use a pre-defined UUID so the template can be upgraded via migration scripts if needed
 TEMPLATE_MONITORING_UUID = '00000000-defa-defa-defa-000000000000'
-TEMPLATE_OPENWISP_MONITORING_01 = OrderedDict(
+TEMPLATE_IMMUNITY
+_MONITORING_01 = OrderedDict(
     {
         "path": "/usr/sbin/immunity-monitoring",
         "mode": "0744",
         "contents": "uuid=$(uci get immunity.http.uuid)\nkey=$(uci get immunity.http.key)\nbase_url=$(uci get immunity.http.url)\nverify_ssl=$(uci get immunity.http.verify_ssl)\nincluded_interfaces=$(uci get immunity.monitoring.included_interfaces)\nurl=\"$base_url/api/v1/monitoring/device/$uuid/?key=$key\"\ndata=$(/usr/sbin/netjson-monitoring \"$included_interfaces\")\nif [ \"$verify_ssl\" = 0 ]; then\n    curl_command='curl -k'\nelse\n    curl_command='curl'\nfi\n# send data via POST\n$curl_command -H \"Content-Type: application/json\" \\\n              -X POST \\\n              -d \"$data\" \\\n              -v $url\n",  # noqa
     }
 )
-TEMPLATE_OPENWISP_MONITORING_02 = OrderedDict(
+TEMPLATE_IMMUNITY
+_MONITORING_02 = OrderedDict(
     {
         "path": "/usr/sbin/legacy-immunity-monitoring",
         "mode": "0744",
@@ -62,14 +64,16 @@ TEMPLATE_RC_LOCAL_02 = OrderedDict(
         "contents": "# Put your custom commands here that should be executed once\n# the system init finished. By default this file does nothing.\n\n/usr/sbin/legacy-immunity-monitoring\ntouch /etc/crontabs/root\n/etc/init.d/cron start\n\nexit 0\n",  # noqa
     }
 )
-TEMPLATE_UPDATE_OPENWISP_PACKAGES_01 = OrderedDict(
+TEMPLATE_UPDATE_IMMUNITY
+_PACKAGES_01 = OrderedDict(
     {
         "path": "/usr/sbin/update-immunity-packages",
         "mode": "0744",
         "contents": "#!/bin/sh\nreboot=false\n\n# updates opkg lists only if necessary\nopkg_update(){\n    (\n        test -d /tmp/opkg-lists/ && \\\n        test -f /tmp/opkg-lists/openwrt_base && \\\n        test -f /tmp/opkg-lists/openwrt_packages && \\\n        test -f /tmp/opkg-lists/openwrt_core\n    ) || opkg update;\n}\n\n# installs libubus-lua if necessary\nlibubus_lua_installed=$(opkg list-installed | grep libubus-lua -c)\nif [ \"$libubus_lua_installed\" == \"0\" ]; then\n    opkg_update\n    opkg install libubus-lua\nfi\n\n# installs lua-cjson if necessary\nluacjson_installed=$(opkg list-installed | grep lua-cjson -c)\nif [ \"$luacjson_installed\" == \"0\" ]; then\n    opkg_update\n    opkg install lua-cjson\nfi\n\n# installs rpcd-mod-iwinfo if necessary\nrpcd_mod_iwinfo_installed=$(opkg list-installed | grep rpcd-mod-iwinfo -c)\nif [ \"$rpcd_mod_iwinfo_installed\" == \"0\" ]; then\n    opkg_update\n    opkg install rpcd-mod-iwinfo\n    reboot=true \nfi\n\n# upgrades immunity-config if necessary\nimmunity_config_version=$(immunity_config --version)\nif [ \"$immunity_config_version\" != \"immunity-config 0.5.0\" ]; then\n    # backup config just in case...\n    cp /etc/config/immunity /etc/config/immunity-backup\n    opkg_update\n    opkg install http://downloads.immunity.io/immunity-config/2021-01-07-162007/immunity-config-mbedtls_0.5.0-1_all.ipk\n    # restore backup\n    mv /etc/config/immunity-backup /etc/config/immunity\n    # remove default conf\n    rm /etc/config/immunity-opkg\n    /etc/init.d/immunity_config restart\nfi\n\n# reboots if rpcd-mod-iwinfo has been installed\nif [ \"$reboot\" == \"true\" ]; then\n    sleep 5\n    reboot && exit\nfi\n",  # noqa
     }
 )
-TEMPLATE_UPDATE_OPENWISP_PACKAGES_02 = OrderedDict(
+TEMPLATE_UPDATE_IMMUNITY
+_PACKAGES_02 = OrderedDict(
     {
         "path": "/usr/sbin/legacy-update-immunity-package",
         "mode": "0744",

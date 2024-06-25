@@ -8,10 +8,12 @@ from . import (
     TEMPLATE_CRONTAB_MONITORING_02,
     TEMPLATE_MONITORING_UUID,
     TEMPLATE_NETJSON_MONITORING_02,
-    TEMPLATE_OPENWISP_MONITORING_02,
+    TEMPLATE_IMMUNITY
+_MONITORING_02,
     TEMPLATE_POST_RELOAD_HOOK_02,
     TEMPLATE_RC_LOCAL_02,
-    TEMPLATE_UPDATE_OPENWISP_PACKAGES_02,
+    TEMPLATE_UPDATE_IMMUNITY
+_PACKAGES_02,
 )
 
 
@@ -22,11 +24,13 @@ def migrate_data(apps, schema_editor):
         template.config = OrderedDict(
             {
                 'files': [
-                    TEMPLATE_OPENWISP_MONITORING_02,
+                    TEMPLATE_IMMUNITY
+_MONITORING_02,
                     TEMPLATE_NETJSON_MONITORING_02,
                     TEMPLATE_CRONTAB_MONITORING_02,
                     TEMPLATE_RC_LOCAL_02,
-                    TEMPLATE_UPDATE_OPENWISP_PACKAGES_02,
+                    TEMPLATE_UPDATE_IMMUNITY
+_PACKAGES_02,
                     TEMPLATE_POST_RELOAD_HOOK_02,
                 ],
                 'immunity': [
